@@ -20,6 +20,7 @@ const passport=require("passport");
 const LocalStrategy=require("passport-local");
 const GoogleStrategy = require('passport-google-oauth20');
 const cors=require('cors');
+const MongoStore = require('connect-mongo');
 const PORT=process.env.PORT || 5100
 
 
@@ -33,8 +34,21 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(cookieParser("topsecret"));
 
+const store= MongoStore.create({
+  mongoUrl: process.env.DB_URL,
+  crypto:{
+      secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3600, 
+});
+
+store.on("error", ()=>{
+  console.log("ERROR IN MONGO SESSION STORE!", err);
+});
+
 const sessionOptions=({
-  secret: "encryptedsecretcode",
+  store,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -189,6 +203,7 @@ main()
 async function main() {
   await mongoose.connect(configUrl);
 }
+
 
 // // app.use("/archive", (req, res, next)=>{
 //     res.render("archives/loading.ejs");
