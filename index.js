@@ -71,7 +71,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  authorizationURL: "http://localhost:5173/auth/google/callback",
+  authorizationURL: "https://astrophileyard.onrender.com/auth/google/callback",
 },
 async function(accessToken, refreshToken, profile, done) {
   try{
