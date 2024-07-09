@@ -1,0 +1,73 @@
+<% layout("/layouts/boilerplate") %>
+    
+    <div class="row mt-4" > 
+        <div class="col-8 offset-2  " style="margin-top: 3rem; color: #dcfe54 ;"> 
+
+    <h3>Edit Archive </h3>
+    <form method="POST" action="/archive/<%= findList._id %>?_method=PUT" class="needs-validation" novalidate >
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input class="form-control" type="text" name="archive[title]" value="<%= findList.title %>" required />
+            <div class="valid-feedback">
+             looks good!
+            </div> 
+        </div>
+
+        <div class="mb-3">
+            <label for="caption" class="form-label">Caption </label>
+            <input class="form-control" type="text" name="archive[caption]" value="<%= findList.caption %>" required >
+            <div class="valid-feedback">
+                looks good!
+               </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Astro Image </label>
+            <input class="form-control" type="text" name="archive[image]" value="<%= findList.image %>" required >
+            <div class="invalid-feedback">
+                Please provide a valid URL or link. <em style="color: #dcfe54;">(Use Unsplash images)</em>
+            </div>
+        </div>
+
+        <div class="mb-3"> <!--marginbottom 3 to add spacing-->
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="archive[description]" id="description" cols="50" rows="5" required><%= findList.description %></textarea> 
+            <div class="invalid-feedback">
+                Please provide a short description.
+            </div>
+        </div>
+
+        <div class="mb-3"> <!--marginbottom 3 to add spacing-->
+            <label for="facts" class="form-label">Facts</label>
+            <textarea class="form-control" name="archive[facts]" id="facts" cols="50" rows="5" required><%= findList.facts %></textarea> 
+        </div>
+
+        <button class="btn btn-warning offset-6 add-btn mt-3">Update Details</button>
+    </form>
+   <br><br>
+
+</div>
+
+</div>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>

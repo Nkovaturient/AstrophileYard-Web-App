@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") %>
+
+
+        <h1 style="margin-top: 5rem; color: #54e654; font-size: 1.5vw;">Astrophile Observatory</h1>
+
+        <div class="gallery-content" style="color: #fff; display: flex; flex-wrap: wrap; justify-content: center; padding: 2.3vw; margin: 2vw 0;
+     background: transparent; backdrop-filter: blur(20px); width: 100%; height: 100%; border: 1px solid #dcfe54;">
+                <p style="color: #fff;">&copy;Jeffbax</p>
+                <% resData.forEach((img)=> { %>
+                        <img src="<%= img.url_real %>" class="img-thumbnail" alt="img"
+                                style="max-width: 25rem; width: fit-content; border-radius: 16px; border: 2px solid #dcfe54;
+                        box-shadow: 0 10px 10px #54e654; margin: 1.45vw; cursor: pointer; opacity: 0.89; transition: all 0.3s ease; ">
+                        <p
+                                style="display: flex; align-items: center; justify-content: center; white-space: wrap; font-size: 1.45vw;">
+                                <%= img.title %>
+                        </p>
+                        <% }) %>
+        </div>
+        <div class="disc">
+                <p style="color: aquamarine; font-size: 1.2vw;">All images presented here are subject to copyright.
+                        For more details visit <a href="https://www.astrobin.com/astrophotographers-list/">AstroBin
+                                website</a></p>
+        </div>

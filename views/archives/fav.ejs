@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="archive-section">
+    <h2>My Favourite Archives Of all time</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- < for(let archive of favListing) { %> -->
+        <a href="/archive/<%= favListing.id %>" style="text-decoration: none;">
+          <div class="col">
+            <div class="card card-index" style="width: 10rem;">
+              <img src="<%= favListing.image %>" loading="lazy" class="card-img-top" alt="img" style="height: 20rem;" />
+              <div class="card-body card-img-overlay">
+                <h5 class="card-title">
+                  <%= favListing.title %>
+                </h5>
+                <p class="card-text">
+                  <%= favListing.caption %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- < } %> -->
+    </div>
+  </div>

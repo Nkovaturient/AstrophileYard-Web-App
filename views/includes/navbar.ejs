@@ -1,0 +1,42 @@
+<nav class="navbar  navbar-expand-lg bg-body-dark border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://localhost:5100/archive">Astrophile</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNavDropdown" >
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 600px;  background-image: linear-gradient(
+          0.25turn,
+          #54e654,
+          #54fed7,
+          #dcfe54
+      ) ; z-index: 999;">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:5100/archive">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:5100/archive/new">Upload New Archive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/archive/gallery">Gallery </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Facts Crunch</a>
+          </li>
+
+        </ul>
+        <div class="nav-item ms-auto" style="--bs-scroll-height: 200px;  background-color: #dcfe54; text-align: center; margin-left: 1.2rem;">
+          <% if (!currUser) { %>
+            <a href="http://localhost:5100/signup">Signup</a>
+            <a href="http://localhost:5100/login">Login</a>
+          <% } %>
+          <% if (currUser) { %>
+            <!-- <a href="http://localhost:5100/archive/:id/user/< currUser._id %>/fav">My Astroyard</a> -->
+            <a href="http://localhost:5100/logout">Log Out</a>
+          <% } %>
+          
+        </div>
+        
+      </div>
+    </div>
+  </nav>

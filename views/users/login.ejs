@@ -1,0 +1,56 @@
+<% layout("/layouts/boilerplate") %>
+<body style="background-image: linear-gradient(135deg, #0172af, #74febd);">
+<div class="row mt-4"> 
+    <div class="col-6 offset-3 sign-box">
+   <h2 class="mb-3" style="font-weight: 700;">Welcome back! &bigstar; &heartsuit;</h2> 
+   
+   <form action="/login" method="post" novalidate class="needs-validation">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input class="form-control" type="text" name="username" id="username" placeholder="enter your username" required /> 
+    </div>
+
+    <div class=" mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input class="form-control" type="password" name="password" id="password" placeholder="enter your password" required>
+    </div>
+    <button class="btn btn-success">LogIn</button>
+    
+       </form>
+       <hr>
+       <p class="offset-6">OR</p>
+       <form class="g-btn" method="get" action="/auth/google">
+        <button class="btn btn-outline-primary mb-3 google-btn"> <i class="fa-brands fa-google"></i> &nbsp; SignUp with Google</button>
+       </form>
+       <form method="get" action="/login/verify">
+        <button class="btn btn-outline-dark offset-4">Forgot Password?</button> 
+       </form> <br>
+       <!-- <form class="g-btn" method="get" action="/auth/google">
+        <button class="btn btn-outline-primary mb-3 google-btn"> <i class="fa-brands fa-google"></i> &nbsp; SignUp with Google</button>
+       </form> -->
+       </div>
+       </div>
+
+       <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })();
+
+    </script>
+    </body>

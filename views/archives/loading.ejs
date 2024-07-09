@@ -1,0 +1,87 @@
+<% layout("/layouts/boilerplate") %>
+
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/981600810/photo/exiting-the-void.webp?b=1&s=170667a&w=0&k=20&c=mIXchAZlbzdUFl0R-44CG0O0ZwLF0o91EMZZLJFslfM=');
+            min-height: 100vh;
+            min-width: 100vw;
+            background-position: center;
+            background-size: cover;
+            background-color: rgb(170, 228, 223);
+            color: rgb(239, 243, 238);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-content {
+            width: 30vw;
+            height: 20vw;
+            /* margin: 4rem; */
+            margin: 10rem 0 0 20rem ;
+            border: 2px solid gray;
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+        }
+
+        h2 {
+            font-size: max(1.1vw, 20px);
+        }
+
+        h3 {
+            text-align: center;
+            font-size: max(0.8vw, 18px);
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .bar-type {
+            position: relative;
+        }
+
+        .wrapper {
+            position: relative;
+            height: 5px;
+            width: 400px;
+            background: rgba(95, 94, 94, 0.45);
+            margin-top: 1.2rem;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .wrapper span {
+            position: absolute;
+            height: 100%;
+            width: 30%;
+            background: #6cf542;
+            left: -15%;
+            animation: slide 1.5s ease infinite;
+        }
+
+        @keyframes slide {
+            50% {
+                left: 85%;
+            }
+
+        }
+    </style>
+
+    <body>
+        <div class="loading-content">
+
+            <h2>Sit back and grab your coffee! It will take a few seconds!</h2>
+            <div class="bar-type">
+                <h3>Loading...</h3>
+                <div class="wrapper">
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+    </body>

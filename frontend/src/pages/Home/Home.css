@@ -1,0 +1,7 @@
+.home{
+    background-image: url('../../assets/a4.jpg');
+    background-color: rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    /* background-position: center; */
+    min-width: 84%;
+}

@@ -1,0 +1,86 @@
+<% layout("/layouts/boilerplate") %>
+    <style>
+        .new-form {
+            backdrop-filter: blur(12px) saturate(200%);
+            -webkit-backdrop-filter: blur(12px) saturate(200%);
+            background-color: rgba(238, 234, 234, 0.548);
+            border-radius: 12px;
+            background: transparent;
+            border: 2px solid rgba(209, 213, 219, 0.3);
+        }
+    </style>
+
+    <div class="row mt-4">
+        <div class="col-8 offset-2  new-form" style="margin-top: 3rem; color: #35e63e ;">
+
+            <h3>Create a new Archive </h3>
+            <form method="POST" action="/archive" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input class="form-control" type="text" name="archive[title]" placeholder="add a catchy title"
+                        required />
+                    <div class="valid-feedback">
+                        looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="caption" class="form-label">Caption </label>
+                    <input class="form-control" type="text" name="archive[caption]" placeholder="add a caption"
+                        required>
+                    <div class="invalid-feedback">
+                        Please enter a valid caption!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Astro Image </label>
+                    <input class="form-control" type="text" name="archive[image]" placeholder="enter image URL or link"
+                        required>
+
+                </div>
+
+                <div class="mb-3"> <!--marginbottom 3 to add spacing-->
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" name="archive[description]" id="description" cols="50" rows="5"
+                        required></textarea>
+                    <div class="invalid-feedback">
+                        Please provide a short description.
+                    </div>
+                </div>
+
+                <div class="mb-3"> <!--marginbottom 3 to add spacing-->
+                    <label for="facts" class="form-label">Facts</label>
+                    <textarea class="form-control" name="archive[facts]" id="facts" cols="50" rows="3"
+                        placeholder="got a fact or two?"></textarea>
+                </div>
+
+                <button class="btn btn-success offset-6 add-btn mt-3">Add</button>
+            </form>
+            <br><br>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>

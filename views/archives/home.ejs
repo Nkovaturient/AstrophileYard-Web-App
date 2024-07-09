@@ -1,0 +1,87 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+  <h1 style="margin-top: 4rem; color: chartreuse;">All Archives</h1>
+
+  <div class="aside">
+    <button class="btn btn-outline-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+      aria-controls="offcanvasScrolling">Awe-struck?!</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+      id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">NASA Images</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body bg-body-dark">
+        <h3>Astronomy Picture of the Day!</h3>
+        <div class="row mt-3 mb-3"> <!--showing Nasa Data  -->
+          <h4 style="color: #54e654; font-weight: 600; font-size: 1.5vw;">
+            <%= data.title %>
+          </h4>
+          <i>
+            <%= data.date %>
+          </i> <br>
+          <img src="<%= data.hdurl %>" alt="spectra" width="85px" height="300px" loading="lazy">
+          <br>
+
+          <p style="margin-top: 1.2vw;">
+            <%= data.explanation %>
+          </p>
+          <br><br>
+          <em style="margin-top: 1.2vw;">&copy; <%= data.copyright %></em>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-container">
+    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Preview APOD HD image
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              <%= data.title %>
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="<%= data.hdurl %>" alt="spectra" loading="lazy">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="archive-section">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% for(let archive of allArchive) { %>
+        <a href="/archive/<%= archive.id %>" style="text-decoration: none;">
+          <div class="col">
+            <div class="card card-index" style="width: 20rem;">
+              <img src="<%= archive.image %>" loading="lazy" class="card-img-top" alt="img" style="height: 20rem;" />
+              <div class="card-body card-img-overlay">
+                <h5 class="card-title">
+                  <%= archive.title %>
+                </h5>
+                <p class="card-text">
+                  <%= archive.caption %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <% } %>
+    </div>
+
+  </div>

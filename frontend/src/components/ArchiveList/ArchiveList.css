@@ -1,0 +1,19 @@
+.archive-display, .apod{
+    margin-top: 30px;
+}
+.archive-display h2, .apod h2{
+    font-size: max(2vw, 24px);
+    font-weight: 600;
+    margin-left: 24px;
+    color: #fff;
+}
+.archive-display-list{
+    /* background-color: yellow; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1.5fr));
+    margin-top: 30px;
+    gap: 39px;
+    row-gap: 50px;
+    margin: 30px 30px;
+
+}

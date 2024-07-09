@@ -1,0 +1,64 @@
+<% layout("/layouts/boilerplate") %>
+
+  <body
+    style=" background: url('https://media.istockphoto.com/id/91633822/photo/space-galaxy.webp?b=1&s=170667a&w=0&k=20&c=DaMNg619pE6XjME7ifwa1BRO3bAE8TJ012BJF4OElZg=');">
+
+    <h2 style="color: #54f8fe; align-self: center; margin-top: 4rem;">Archives</h2>
+
+
+    <div class="show-container mt-4" style="display: flex; justify-content: space-between; margin-bottom: 5rem;">
+
+      <div class="card text-bg-dark mt-4" style="width: 40vw; padding: 1.2rem;">
+        <div class="card-body" style=" background: transparent; color: #dcfe54;">
+          <h5 class="card-title">
+            <%= showList.title %>
+          </h5>
+          <p class="card-text">
+            <%= showList.description %>
+          </p>
+          <p class="card-text"><small class="text-body-dark" style="color: #39f09b;">
+              <%= showList.caption %>
+            </small></p>
+        </div>
+        <img src="<%= showList.image %>" class="card-img-bottom" alt="cosmos">
+        <em><%= showList.owner.username %></em>
+        <% if (currUser && currUser.id.equals(showList.owner._id)) { %>
+         
+        <div class="card-operations" style="display: flex; align-items: center; justify-content: space-evenly; gap: 10px; margin-top: 2.1rem;">
+          <form method="get" action='/archive/<%= showList._id %>/edit' class="card-operations">
+            <button class="btn btn-outline-warning offset-2" style="width: 90px; height: 50px; padding: 1.01rem;">Edit <i class="fa-solid fa-pen-to-square"></i></button>
+          </form>
+          <form >
+            <button class="btn btn-outline-info offset-3 fav-btn" style="width: 60px; height: 50px; padding: 0.75rem;"><i class="fa-regular fa-heart"></i></button>
+          </form>
+          <form method="POST" action="/archive/<%= showList._id %>?_method=DELETE">
+            <button class="btn btn-outline-danger offset-4" style="width: 120px; height: 60px; padding: 1.01rem;">Delete<i class="fa-regular fa-trash-can"></i></button>
+          </form>
+        </div>
+        <% } %> 
+      </div>
+
+      <div class="fact-container mt-2">
+        <p>
+          <button class="btn btn-outline-warning" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+            wanna know some cool facts?
+          </button>
+        </p>
+        <div class="fact-card" style="min-height: 50px; width: 30vw;">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample">
+            <div class="card card-body"
+              style="width: 40vw; background: transparent; color: #39f09b; border: 2px solid #d6d3d3; padding: 1.2rem;">
+              <%= showList.facts %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+    </script>
+  </body>

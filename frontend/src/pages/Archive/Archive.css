@@ -1,0 +1,87 @@
+.archive-item{
+    background-size: cover;
+    /* min-height: 100vw; */
+    /* background-color: #fcfa7ee7; */
+    background-image: url(../../assets/a2.jpg);
+    text-align: center;
+   
+}
+.archive-item h2{
+    color: #54f8fe;
+    align-self: center;
+    margin-top: 4rem;
+}
+
+.col-content{
+    display: flex;
+     justify-content: space-between;
+      margin-bottom: 5rem;
+}
+
+.archive-card{
+    /* width: 450px;
+    height: 650px; */
+    margin: 2.1rem;
+    /* min-height: 80vh; */
+    /* background-color: yellow; */
+}
+.archive-card img{
+    width:60%;
+    height: 390px;
+    /* clip-path: xywh(0 5px 100% 75% round 15% 0 ); */
+}
+.archive-card-body{
+    background: transparent;
+    border: 1px solid gray;
+    backdrop-filter: blur(20px);
+     color: #c9c9c9;
+     /* max-width: 60%; */
+     font-size: max(1.1vw, 16px);
+     display: flex;
+     flex-direction: column;
+     margin-top: 3.2rem;
+     padding: 3.1rem;
+     align-items: center;
+     justify-content: center;
+}
+
+.card-operations{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 10px;
+    margin: 1.4rem;
+}
+
+.card-operations .btn{
+    max-width: 120px;
+    border: none;
+    padding: 14px;
+    background-color: #071F4D;
+    box-shadow: 0 7px 10px #dcfe54;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+}
+.card-operations .btn:hover{
+    color: #071F4D;
+    background-color: #fff;
+}
+.archive-card-body .caption{
+    font-size: max(2.1vw, 19px);
+    font-weight: 600;
+    line-height: 1.2cm;
+    margin-bottom: 1.1rem;
+}
+.archive-card-body .caption:before{
+    content: '💫 ';
+}
+.archive-card-body .description:before{
+    content: '✨ ';
+}
+.archive-card-body .description{
+    margin-bottom: 2.1rem;
+}
+.archive-card-body .facts:before{
+    content: '✨ ';
+}

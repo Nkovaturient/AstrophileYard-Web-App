@@ -1,0 +1,64 @@
+.archive-item{
+      /* background-color: yellow; */
+      width: 100%;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px #00000015;
+      transition: 0.3s;
+      animation: fadeIn 1s; 
+}
+
+
+.card-index{
+    background-color: black;
+    border: none;
+    margin-bottom: 2rem;
+    margin-right: 2.5rem;
+    transition: 0.3s ease;
+    border-radius: 1.65rem;
+}
+
+.card-index:hover{
+    transform: scale(1.1);
+    opacity: 0.85;
+    cursor: pointer;
+}
+/* .card-index img{
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+} */
+
+.card-img-top{
+    border-radius: 1.5rem; 
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 0;
+}
+
+.card-text p {
+    font-weight: 400;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* CARD IMG OVERLAY*/
+
+.card-img-overlay{
+    opacity: 0;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.card-img-overlay:hover{
+    opacity: 1;
+    transform: scale(0.8); 
+    color: #fff; 
+    font-size: 1.1rem;
+}
+
+.card-img-overlay .card-text{
+    color: #54e654;
+    text-align: center;
+}

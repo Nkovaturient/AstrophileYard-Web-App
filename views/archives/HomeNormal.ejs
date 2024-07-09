@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+  <h1>All Archives</h1>
+
+  <div class="aside">
+    <button class="btn btn-outline-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+      aria-controls="offcanvasScrolling">Awe-struck!</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+      id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">NASA Images</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <p>Glance at it while you sip your coffee!</p>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="archive-section">
+     
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% for(let archive of allArchive) { %>
+        <a href="/archive/<%= archive.id %>" style="text-decoration: none;">
+          <div class="col">
+            <div class="card card-index" style="width: 22rem;">
+              <img src="<%= archive.image %>" loading="lazy" class="card-img-top" alt="img" style="height: 20rem;" />
+              <div class="card-body card-img-overlay">
+                <h5 class="card-title">
+                  <%= archive.title %>
+                </h5>
+                <p class="card-text">
+                  <%= archive.caption %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <% } %>
+    </div>
+
+  </div>

@@ -1,0 +1,36 @@
+.misc-container{
+    display: flex;
+    flex-direction: column;
+    background-image: url(../../assets/a3.jpg);
+    background-size: cover;
+}
+
+.gallery{
+    margin-left: 30px;
+    margin-top: 30px;
+    min-height: 100vw;
+    color: aliceblue;
+    /* position: relative; */
+
+}
+.gallery-header{
+    background: transparent;
+    backdrop-filter: blur(12px);
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: 70%;
+    padding: 1.2rem;
+}
+.gallery-header h2{
+    font-size: 2.1rem;
+    color: #28c577;
+}
+.gallery-header p{
+    margin-top: 1.1rem;
+    font-size: max(1.5vw, 15px);
+}
+.gallery-header h2 span{
+    background-image: linear-gradient(0.25turn, #28c577, #103ac5, #5dfc64);
+    mix-blend-mode: color-burn;
+}
