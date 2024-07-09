@@ -14,4 +14,4 @@ export const assets={
     logo_3,
 }
 
-export const url = `http://localhost:5100`;
+export const url = `https://astroyard-backend.onrender.com`;
