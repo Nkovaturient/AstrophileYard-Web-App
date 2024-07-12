@@ -25,7 +25,10 @@ const storeContextProvider = (props) => {
       if (response.data.success) {
         setResult(response.data.archives)
         // console.log(response.data.archives);
-        toast.success('Welcome to Astrophile Yard!');
+        toast.success('Welcome to Astrophile Yard!', { 
+          autoClose: 5000,
+          theme: "colored",
+        });
       }
       else{
         toast.warning(`${err.message}`);

@@ -41,7 +41,7 @@ const Upload = () => {
       formData.append("image", image)
 
       const response = await axios.post(`${url}/archive`, {headers: {token}}, formData)
-      // console.log(response.data.archive);
+      console.log(response.data.archive);
       toast.success('Uploaded your Archive successfully!', {
         autoClose: 5000,
         theme: "colored",
@@ -66,7 +66,7 @@ const Upload = () => {
     <div className='add'>
       <h3>Upload your Archive in your Astrophile Yard <FontAwesomeIcon icon={faImages}/></h3>
       <p>All Fields are mandatory.(*)</p> <br />
-      <form className='flex-col' onSubmit={handleOnSubmit} encType="multipart/form-data" >
+      <form className='flex-col' onSubmit={handleOnSubmit}  >
         <div className="add-image-upload flex-col">
           <p>Upload Image</p>
           <label htmlFor="image">
