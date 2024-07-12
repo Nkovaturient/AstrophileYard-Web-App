@@ -44,10 +44,10 @@ const Archive = () => {
     <div className="archive-item" id='archive-item'>
     <div className="card-operations">
           <div className="edit">
-            <Link to={`/archive/${res._id}/edit`} className='btn'>Edit</Link>
+            <Link  className='btn'>Edit</Link> {/*to={`/archive/${res._id}/edit`} */}
           </div>
           <div className="delete">
-          <Link to={`/archive/${res._id}/delete`} className='btn'>Delete</Link>
+          <Link className='btn'>Delete</Link>
           </div>
         </div>
 

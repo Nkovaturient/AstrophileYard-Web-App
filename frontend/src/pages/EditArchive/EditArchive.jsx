@@ -97,7 +97,7 @@ const EditArchive = () => {
     return (
         <div className='add'>
             { loading ? <Spinner/> : ''}
-            <form className='flex-col' onSubmit={handleOnSubmit} typeof='' >
+            <form className='flex-col' onSubmit={handleOnSubmit}  >
                 <div className="add-image-upload flex-col">
                     <p>Upload a New Image</p>
                     <label htmlFor="image">
