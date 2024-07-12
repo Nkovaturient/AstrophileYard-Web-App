@@ -58,7 +58,7 @@ const Upload = () => {
   }
 
   // console.log(formData);
-  console.log(image);
+  // console.log(image);
 
   
 
@@ -66,11 +66,11 @@ const Upload = () => {
     <div className='add'>
       <h3>Upload your Archive in your Astrophile Yard <FontAwesomeIcon icon={faImages}/></h3>
       <p>All Fields are mandatory.(*)</p> <br />
-      <form className='flex-col' onSubmit={handleOnSubmit} >
+      <form className='flex-col' onSubmit={handleOnSubmit} encType="multipart/form-data" >
         <div className="add-image-upload flex-col">
           <p>Upload Image</p>
           <label htmlFor="image">
-            <img src={image ? URL.createObjectURL(image) : assets.upload_area} alt="img" />
+            <img src={image ? URL.createObjectURL(image) : assets.upload_area} alt="img" name='image' />
           </label>
           <input onChange={(e) => 
             setImage(e.target.files[0]) }

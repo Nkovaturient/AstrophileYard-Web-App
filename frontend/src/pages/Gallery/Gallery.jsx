@@ -142,7 +142,7 @@ const Gallery = () => {
             </div>
         </div>
         </div>
-        <div className="pagination">
+        {/* <div className="pagination">
             <button className="prev">Previous</button>
             <span className="page-numbers">
                 1
@@ -154,7 +154,7 @@ const Gallery = () => {
                 3
             </span>
             <button className="next">Next</button>
-        </div>
+        </div> */}
         
     </div>
     </div>

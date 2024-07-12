@@ -41,19 +41,20 @@ module.exports.renderEditForm=async(req,res)=>{
 
 module.exports.postNewArchive = async (req, res) => {
 
-    // const imageFile= `${req.file.filename}`;
+    console.log(req.file);
+
     const saveArchive = new Archive({
         title: req.body.title,
         caption:req.body.caption,
-        // image:req.file.filename|| req.body.image,
+        image: req.file? req.file.path : req.body.image,
         description:req.body.description,
         facts:req.body.facts,
     });
-    if(req.file.path){
-        saveArchive.image= req.file.path;
-    } else {
-        saveArchive.image= req.file.filename;
-    }
+    // if(req.file){
+    //     saveArchive.image= req.file.path;
+    // } else {
+    //     saveArchive.image=  req.body.image;
+    // }
     
     console.log(saveArchive);
 
