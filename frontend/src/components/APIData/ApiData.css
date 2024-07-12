@@ -31,3 +31,24 @@
     font-size: 2.1rem;
     margin: 20px 0px;
 }
+
+@media (max-width:600px) {
+    .api-data img{
+        width: 250px;
+        height: 180px;
+    }
+    .api-data h4{
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin: 20px 0px;
+    }
+    .api-data p{
+        font-weight: 500;
+        font-size: 12px;
+        width: 70%;
+        text-align: center;
+        margin: 10px auto;
+        /* margin-left: 19rem; */
+    }
+    
+}

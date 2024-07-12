@@ -85,3 +85,14 @@
 .archive-card-body .facts:before{
     content: '✨ ';
 }
+
+@media (max-width:600px) {
+    .archive-card img{
+        width:68%;
+        height: 250px;
+    }
+    .archive-item h2{
+       font-size: 17px;
+    }
+    
+}

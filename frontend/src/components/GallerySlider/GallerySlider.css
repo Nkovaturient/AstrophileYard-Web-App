@@ -59,3 +59,36 @@
 .hide{
     display: none;
 }
+
+@media (max-width:600px) {
+    .gallery-slider{
+        width: 210px;
+        height: 210px;
+    }
+    .arrow{
+        width: 1.5rem;
+    }
+    
+}
+
+@media (max-width:900px) {
+    .gallery-slider{
+        width: 350px;
+        height: 290px;
+    }
+    .arrow{
+        width: 2.5rem;
+    }
+    
+}
+
+@media (max-width:1100px) {
+    .gallery-slider {
+        width: 610px;
+        height: 360px;
+    }
+    /* .arrow{
+        width: 2.5rem;
+    } */
+    
+}

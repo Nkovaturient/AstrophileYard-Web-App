@@ -13,14 +13,8 @@ const storeContextProvider = (props) => {
   const navigate=useNavigate();
   const [result, setResult] = useState([]);
   const [apiData, setApiData] = useState([]);
-  const [image, setImage] = useState(false)
-  const [data, setData] = useState({
-    title: '',
-    caption: '',
-    description: '',
-    image: '',
-    facts: '',
-  })
+  const [image, setImage] = useState([])
+ 
   
 
   const fetchData = async () => {
@@ -31,7 +25,7 @@ const storeContextProvider = (props) => {
       if (response.data.success) {
         setResult(response.data.archives)
         // console.log(response.data.archives);
-        // toast.success('Welcome to Astrophile Yard!');
+        toast.success('Welcome to Astrophile Yard!');
       }
       else{
         toast.warning(`${err.message}`);
@@ -87,9 +81,25 @@ const storeContextProvider = (props) => {
   }
   }
 
+  const galleryData=async()=>{
+    try{
+      setLoading(true);
+      const response=await axios.get(`${url}/archive/gallery`);
+      setLoading(false)
+      if(response.data.success){
+          // console.log(response.data);
+          setImage(response.data.data);
+      }
+
+  }catch(err){
+      toast.error(`${err.message}`);
+  }
+  }
+
   useEffect(()=>{ 
     async function loadData(){
         await fetchData();
+        await galleryData();
         if(localStorage.getItem('token')){
             setToken(localStorage.getItem("token"))
             
@@ -109,8 +119,7 @@ const storeContextProvider = (props) => {
     apiData,
     result,
     setImage,
-    setData,
-    handleOnSubmit,
+    image,
     loading,
     setLoading,
 

@@ -54,8 +54,8 @@
     font-size: 1.4rem;
 }
 .sidebar-option.active{ /*NavLink active gets added*/
-    background-color: #171817;
-    border-color: #0c0249;
+    background-color: #032998;
+    border-color: #8cfed4;
 }
 
 @media (max-width: 900px) {

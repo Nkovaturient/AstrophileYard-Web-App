@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import './Sidebar.css'
 import { NavLink, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClose, faHome, faImagePortrait, faSignature, faSignOut, faUpload, faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
+import { faClose, faHome, faImagePortrait, faImages, faMusic, faSignature, faSignOut, faUpload, faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
 import { storeContext } from '../../Context/storeContext'
 import { assets } from '../../assets/assets'
 import Login from '../Login/Login'
@@ -27,8 +27,12 @@ const Sidebar = ({ setLoginPopup }) => {
           <p>Upload your Archive</p>
         </NavLink>
         <NavLink to='/archive/gallery' className="sidebar-option">
-          <span><FontAwesomeIcon icon={faImagePortrait} /></span>
+          <span><FontAwesomeIcon icon={faImages} /></span>
           <p>Gallery</p>
+        </NavLink>
+        <NavLink to={'/archive/musicaly' } className="sidebar-option">
+          <span><FontAwesomeIcon icon={faMusic} /></span>
+          <p>Tune in</p>
         </NavLink>
         {
           token

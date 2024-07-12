@@ -45,17 +45,20 @@ module.exports.postNewArchive = async (req, res) => {
     const saveArchive = new Archive({
         title: req.body.title,
         caption:req.body.caption,
-        image:req.file.path || req.body.image,
+        // image:req.file.filename|| req.body.image,
         description:req.body.description,
         facts:req.body.facts,
     });
-    // saveArchive.image= imageFile;
+    if(req.file.path){
+        saveArchive.image= req.file.path;
+    } else {
+        saveArchive.image= req.file.filename;
+    }
+    
     console.log(saveArchive);
 
    const savedArchive= await saveArchive.save();
     return res.status(200).json({success: true, archive: savedArchive});
-    // req.flash("success", "New Archive added!");
-    // res.redirect("/archive");
 
 };
 
@@ -96,8 +99,6 @@ module.exports.deleteArchive = async (req, res) => {
     const dltArchive = await Archive.findByIdAndDelete(id);
     // console.log(dltArchive);
     return res.status(200).json({success: true, message: 'Deleted successfully', archive: dltArchive});
-    // req.flash("success", "Archive was deleted permanently!");
-    // res.redirect("/archive");
 
 };
 
@@ -120,7 +121,26 @@ module.exports.gallery = async (req, res) => {
 }
 
 module.exports.musicaly=async(req,res)=>{
-    const url=`https://api.spotify.com/v1/playlists/67oHnrWRS3mvdv9PhOXt29` //get Authorization : Bearer
+    const url='"https://accounts.spotify.com/api/token"' //get Authorization : Bearer
+    const client_id = process.env.SPOTIFY_CLIENT_ID;
+    const redirect_uri = 'https://astroyard-backend.onrender.com/archive/musicaly/callback';
+
+
+  let state = generateRandomString(16);
+  let scope = 'user-read-private user-read-email';
+
+  res.redirect('https://accounts.spotify.com/authorize?' +
+    querystring.stringify({
+      response_type: 'code',
+      client_id: client_id,
+      scope: scope,
+      redirect_uri: redirect_uri,
+      state: state
+    }));
+
+}
+
+module.exports.callback=async(req, res)=>{
 
 }
 

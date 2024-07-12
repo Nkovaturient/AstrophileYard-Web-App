@@ -50,15 +50,15 @@ const Upload = () => {
 
 
     } catch (err) {
-      toast.error(`Couldnt upload your archive. Try to Login or register first!`, {
-        autoClose: 5000,
+      toast.error(`Couldnt upload your archive. Try to Login or register first! save this details in notepad as it might reload!`, {
+        autoClose: 8000,
         theme: "dark",
       });
     }
   }
 
   // console.log(formData);
-  // console.log(image);
+  console.log(image);
 
   
 

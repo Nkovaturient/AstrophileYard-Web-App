@@ -14,6 +14,7 @@ import DeleteArchive from './pages/DeleteArchive/DeleteArchive.jsx';
 import Login from './components/Login/Login.jsx';
 import Gallery from './pages/Gallery/Gallery.jsx';
 import Logout from './components/Logout/Logout.jsx';
+import Musicaly from './pages/Musicaly/Musicaly.jsx';
 
 const App = () => {
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path='/archive/:id/edit' element={<EditArchive />} />
         <Route path='/archive/:id/delete' element={<DeleteArchive />} />
         <Route path='/archive/gallery' element={<Gallery />} /> 
+        <Route path='/archive/musicaly' element={<Musicaly />} />
         <Route path='/logout' element={<Logout />} /> 
       </Routes>
     </div>

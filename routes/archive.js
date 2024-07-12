@@ -37,5 +37,9 @@ router.route("/:id/edit")
 router.route("/musicaly")
 .get(wrapAsync(archiveControllers.musicaly));
 
+router.route("/musicaly/callback")
+.get(archiveControllers.callback);
+
+
 module.exports= router;
 

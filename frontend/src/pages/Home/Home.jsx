@@ -12,6 +12,7 @@ const Home = () => {
     <Header />
     <ArchiveList />
       </div>
+      
     </>
   )
 }

@@ -16,7 +16,7 @@ const GallerySlider = ({image}) => {
     <>
     <div className="gallery-slider-container">
     <p style={{textAlign: 'right', }}><span><FontAwesomeIcon  icon={faCopyright}/></span> Jeffbax</p>
-    <div className='gallery-slider' >
+    <div className='gallery-slider' key={image.index}>
        <FontAwesomeIcon icon={faChevronCircleLeft} onClick={handlePrevSlide} className='arrow arrow-left' />
        {
         image.map((item, index)=>{

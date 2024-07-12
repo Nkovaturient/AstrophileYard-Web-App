@@ -8,7 +8,7 @@
 .gallery{
     margin-left: 30px;
     margin-top: 30px;
-    min-height: 100vw;
+    /* min-height: 100vw; */
     color: aliceblue;
     /* position: relative; */
 
@@ -25,6 +25,7 @@
 .gallery-header h2{
     font-size: 2.1rem;
     color: #28c577;
+    white-space: nowrap;
 }
 .gallery-header p{
     margin-top: 1.1rem;
@@ -34,3 +35,209 @@
     background-image: linear-gradient(0.25turn, #28c577, #103ac5, #5dfc64);
     mix-blend-mode: color-burn;
 }
+
+.grid-gallery{
+    color: #fff;
+    border: 1px solid #28c577;
+    border-radius: 12px;
+    padding: 2.1rem;
+    margin: 2.1rem;
+    height: 70vh;
+    background: transparent;
+    backdrop-filter: blur(21px);
+    overflow: hidden;
+    overflow-y: scroll;
+    /* background-color: yellow; */
+}
+/* .grid-items{
+    display: grid;
+    grid-template-rows: repeat(autofill, minmax(200px, 1fr));
+    gap: 15px;
+} */
+.grid-cards{
+    display: grid;
+    grid-template-columns: repeat(autofill, minmax(20px, 1fr));
+    gap: 15px;
+    height: 50vh;
+    width: 50%;
+    /* background-color: blue; */
+    border-radius: 12px ;
+    border: 1px solid #28c577;
+    margin: 1.2rem;
+    /* margin-bottom: 2.1rem; */
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+#card1{
+    background-image: url(../../assets/img1.webp);
+}
+#card2{
+    background-image: url(../../assets/img2.webp);
+}
+#card3{
+    background-image: url(../../assets/img3.webp);
+}
+#card4{
+    background-image: url(../../assets/img4.webp);
+}
+#card5{
+    background-image: url(../../assets/img5.webp);
+}
+#card6{
+    background-image: url(../../assets/img6.webp);
+}
+#card7{
+    background-image: url(../../assets/img7.webp);
+}
+#card8{
+    background-image: url(../../assets/img8.webp);
+}
+#card9{
+    background-image: url(../../assets/img9.webp);
+}
+#card10{
+    background-image: url(../../assets/img10.webp);
+}
+#card11{
+    background-image: url(../../assets/img11.webp);
+}
+#card12{
+    background-image: url(../../assets/img12.webp);
+}
+#card13{
+    background-image: url(../../assets/img13.webp);
+}
+#card14{
+    background-image: url(../../assets/img14.webp);
+}
+.content-overlay{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    background-color: rgba(0, 0,0,0.44);
+    padding-top: 150px;
+    padding: 30px;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+.grid-cards:hover .content-overlay{
+    opacity: 1;
+    cursor: pointer;
+}
+/* .grid-cards:hover{
+transform: rotate3d(-1, 1, 0, 20deg);
+} */
+.content-overlay h5{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 21px;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    
+}
+.content-overlay p{
+    color: #fff;
+    font-size: 14px;
+}
+
+.pagination {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination .page-numbers {
+    display: inline-block;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    cursor: pointer;
+
+}
+.pagination button:hover, .page-numbers:hover{
+    background-color: #5dfc64;
+    color: #103ac5;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+   .misc-container{
+    min-width: 60vh;
+   }
+   .gallery-header{
+    border: none;
+   }
+   .gallery-header h2{
+    font-size: 14px;
+   }
+   .gallery-header h2 span{
+    color: #d3fa45;
+   }
+   .gallery-header p{
+    font-size: 9.56px;
+   }
+   .grid-gallery{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap-reverse;
+   }
+   .grid-cards{
+    width: 90%;
+
+   }
+    
+}
+
+@media (max-width: 900px) {
+    .misc-container{
+     min-width: 60vh;
+    }
+    .gallery-header h2{
+     font-size: 18px;
+    }
+    .gallery-header p{
+     font-size: 12.5px;
+    }
+    .grid-gallery{
+     display: flex;
+     gap: 10px;
+     flex-wrap: wrap;
+    }
+    .grid-cards{
+     width: 95%;
+ 
+    }
+     
+ }
+
+ @media (max-width: 1100px) {
+    .misc-container{
+     min-width: 60vh;
+    }
+    .gallery-header h2{
+     font-size: 24px;
+    }
+    .gallery-header p{
+     font-size: 17px;
+    }
+    .grid-gallery{
+     display: flex;
+     gap: 10px;
+     flex-wrap: wrap;
+    }
+    .grid-cards{
+     width: 95%;
+ 
+    }
+     
+ }
