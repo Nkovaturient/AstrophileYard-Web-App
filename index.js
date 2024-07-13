@@ -49,7 +49,12 @@ const allowedOrigins=[ 'https://astroyard-backend.onrender.com', 'http://localho
 //   credentials: true,
 // }));
 
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  methods: 'GET,POST,PUT,DELETE,OPTIONS',
+  allowedHeaders: 'Content-Type,Authorization',
+  credentials: true,
+}));
 
 
 const store= MongoStore.create({
@@ -101,7 +106,7 @@ async function(accessToken, refreshToken, profile, done) {
     const existingUser= await User.findOne({googleId: profile.id});
     if(existingUser){
        done(null, existingUser);
-       return res.json({ user: existingUser})
+       return res.json({ user: existingUser, token: refreshToken})
     }
 
     // const username = profile.emails[0].value.split('@')[0];
@@ -115,7 +120,7 @@ async function(accessToken, refreshToken, profile, done) {
     });
    await newUser.save();
    done(null, newUser);
-   return res.json({success: true, user: newUser})
+   return res.json({success: true, user: newUser, token: accessToken})
 
   }
  catch (error) {
