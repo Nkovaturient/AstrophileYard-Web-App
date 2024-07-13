@@ -74,8 +74,13 @@ const Login = ({setLoginPopup}) => {
     }
 
     const googleSign=async()=>{
+        const allowedOrigins=[ 'https://astroyard-backend.onrender.com', 'http://localhost:5173', 'https://astrophileyard.onrender.com']
         try{
-            const resp=await axios.get(`${url}/auth/google`);
+            const resp=await axios.get(`${url}/auth/google`, {
+                headers: {
+                    'Access-Control-Allow-Origin': allowedOrigins,
+                }
+            });
             console.log(resp.data);
 
         } catch(err){
