@@ -83,17 +83,6 @@ const Login = ({setLoginPopup}) => {
         }
 
     }
-    const googleAuth=async()=>{
-        try{
-            const resp=await axios.get(`${url}/auth/google/callback`);
-            console.log(resp.data);
-
-        } catch(err){
-            toast.error(`${err.message}`);
-        }
-
-    }
-    
     
 
     // useEffect(()=>{

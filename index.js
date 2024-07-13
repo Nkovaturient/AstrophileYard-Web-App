@@ -29,10 +29,24 @@ app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended: true}));
-app.use(cors());
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(cookieParser("topsecret"));
+
+const allowedOrigins=[ 'https://astroyard-backend.onrender.com', 'http://localhost:5173', 'https://astrophileyard.onrender.com']
+app.use(cors({
+  origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+          const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+          return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+  },
+  credentials: true,
+}));
+
 
 const store= MongoStore.create({
   mongoUrl: process.env.DB_URL,
@@ -77,11 +91,13 @@ async function(accessToken, refreshToken, profile, done) {
   try{
     // console.log('profile=', profile);
     if (!profile) {
-      return done(new Error('No profile returned from Google'), null);
+       done(new Error('No profile returned from Google'), null);
+       return res.json({success: false, message: "No profile returned from Google"})
     }
     const existingUser= await User.findOne({googleId: profile.id});
     if(existingUser){
-      return done(null, existingUser);
+       done(null, existingUser);
+       return res.json({ user: existingUser})
     }
 
     // const username = profile.emails[0].value.split('@')[0];
@@ -95,11 +111,13 @@ async function(accessToken, refreshToken, profile, done) {
     });
    await newUser.save();
    done(null, newUser);
+   return res.json({success: true, user: newUser})
 
   }
  catch (error) {
   console.error('Error in passport callback:', error);
   done(error, null);
+  return res.json({success: false, error: error.message});
 }
 }
 ));

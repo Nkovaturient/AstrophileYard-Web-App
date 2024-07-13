@@ -42,6 +42,7 @@ module.exports.renderEditForm=async(req,res)=>{
 module.exports.postNewArchive = async (req, res) => {
 
     console.log(req.file);
+    console.log(req.body.formData);
 
     const saveArchive = new Archive({
         title: req.body.title,
