@@ -42,32 +42,6 @@ const storeContextProvider = (props) => {
     }
   }
 
-  const handleOnSubmit = async (event, token) => {
-    event.preventDefault();
-    try {
-      const formData = new FormData()
-      formData.append('title', data.title)
-      formData.append('caption', data.caption)
-      formData.append('description', data.description)
-      formData.append('facts', data.facts)
-      formData.append("image", image)
-
-      const response = await axios.post(`${url}/archive`, {headers: {token}}, formData)
-      // console.log(response.data.archive);
-      toast.success('Uploaded your Archive successfully!', {
-        autoClose: 5000,
-        theme: "colored",
-      })
-      navigate('/');
-
-
-    } catch (err) {
-      toast.error(`Couldnt upload your archive. Try to Login or register first!`, {
-        autoClose: 5000,
-        theme: "dark",
-      });
-    }
-  }
 
   const logout=async()=>{
     try{

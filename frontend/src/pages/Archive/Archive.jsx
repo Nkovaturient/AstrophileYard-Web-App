@@ -44,7 +44,7 @@ const Archive = () => {
     <div className="archive-item" id='archive-item'>
     <div className="card-operations">
           <div className="edit">
-            <Link  className='btn'>Edit</Link> {/*to={`/archive/${res._id}/edit`} */}
+            <Link to={`/archive/${res._id}/edit`}  className='btn'>Edit</Link> 
           </div>
           <div className="delete">
           <Link className='btn'>Delete</Link>

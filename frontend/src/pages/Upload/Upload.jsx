@@ -5,23 +5,23 @@ import { faImages, faSpaceShuttle } from '@fortawesome/free-solid-svg-icons'
 import { assets } from '../../assets/assets'
 import { toast } from 'react-toastify'
 import axios from 'axios'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { storeContext } from '../../Context/storeContext'
 
 const Upload = () => {
 
-  const {url, token}=useContext(storeContext);
+  const { url, token } = useContext(storeContext);
 
   const [image, setImage] = useState(false)
   const [data, setData] = useState({
     title: '',
     caption: '',
     description: '',
-    image: '',
+    image:'',
     facts: '',
   })
-  const navigate=useNavigate();
- 
+  const navigate = useNavigate();
+
 
   const handleOnChange = (event) => {
     const name = event.target.name;
@@ -33,54 +33,63 @@ const Upload = () => {
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     try {
-      const formData = new FormData()
-      formData.append('title', data.title)
-      formData.append('caption', data.caption)
-      formData.append('description', data.description)
-      formData.append('facts', data.facts)
-      formData.append("image", image)
+      const formInfo = new FormData()
+      formInfo.append("title", data.title);
+      formInfo.append("caption", data.caption);
+      formInfo.append("description", data.description);
+      formInfo.append("facts", data.facts);
+      formInfo.append("image", image);
 
-      const response = await axios.post(`${url}/archive`, {headers: {token}}, formData)
-      console.log(response.data.archive);
-      toast.success('Uploaded your Archive successfully!', {
-        autoClose: 5000,
-        theme: "colored",
-      })
-      navigate('/');
 
+      const response = await axios.post(`${url}/archive`, formInfo,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            token
+          }
+        })
+      if (response.data.success) {
+        console.log(response.data.archive);
+        toast.success('Uploaded your Archive successfully!', {
+          autoClose: 5000,
+          theme: "colored",
+        })
+        navigate('/');
+
+      }
 
     } catch (err) {
-      toast.error(`Couldnt upload your archive. Try to Login or register first! save this details in notepad as it might reload!`, {
+      toast.error(`Couldnt upload! Try to Login or register first! save this details in notepad as it might reload!`, {
         autoClose: 8000,
         theme: "dark",
       });
     }
   }
 
-  // console.log(formData);
-  // console.log(image);
 
-  
+  console.log(data);
+  console.log(image);
+
+
 
   return (
     <div className='add'>
-      <h3>Upload your Archive in your Astrophile Yard <FontAwesomeIcon icon={faImages}/></h3>
+      <h3>Upload your Archive in your Astrophile Yard <FontAwesomeIcon icon={faImages} /></h3>
       <p>All Fields are mandatory.(*)</p> <br />
       <form className='flex-col' onSubmit={handleOnSubmit}  >
         <div className="add-image-upload flex-col">
           <p>Upload Image</p>
           <label htmlFor="image">
-            <img src={image ? URL.createObjectURL(image) : assets.upload_area} alt="img" name='image' />
+            <img src={image ? URL.createObjectURL(image) : assets.upload_area} alt="img" />
           </label>
-          <input onChange={(e) => 
-            setImage(e.target.files[0]) }
+          <input onChange={(e) => { setImage(e.target.files[0]) }}
             type="file" id='image' hidden required />
         </div>
 
         <div className="add-product-name flex-col">
           <p>Title</p>
           <input onChange={handleOnChange} value={data.title}
-            type="text" name='title' placeholder='enter here' required/>
+            type="text" name='title' placeholder='enter here' required />
         </div>
 
         <div className="add-product-name flex-col">

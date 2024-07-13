@@ -55,8 +55,8 @@ const Gallery = () => {
        <div className="grid-items">
         <div className="grid-cards" id='card1'>
             <div className="content-overlay">
-                <h5>title</h5>
-                <p>Lorem ipsum dolor sit, amet consectetu Numquam dolores accusantium voluptas at.</p>
+                <h5>Milkyway Photography</h5>
+                <p>June 17, 2024</p>
             </div>
         </div>
         <div className="grid-cards" id='card2'>

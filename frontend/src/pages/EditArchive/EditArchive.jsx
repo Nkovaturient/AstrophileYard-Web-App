@@ -71,6 +71,7 @@ const EditArchive = () => {
             const response = await axios.put(`${url}/archive/${id}`, formData, {   
                 headers: {
                 'Content-Type': 'multipart/form-data',
+                token
             }
         })
         setLoading(false)
@@ -81,6 +82,12 @@ const EditArchive = () => {
                     theme: "colored",
                 })
                 navigate(`/archive/${id}`);
+
+            } else {
+                toast.error(`${err.message}`, {
+                    autoClose: 5000,
+                    theme: "dark",
+                });
 
             }
         } catch (err) {
