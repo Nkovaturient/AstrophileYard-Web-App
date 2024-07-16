@@ -104,12 +104,12 @@ const Login = ({setLoginPopup}) => {
             <h2>{currState}</h2>
             <span><FontAwesomeIcon icon={faClose} onClick={() => setLoginPopup(false)} /></span>
             {/* <img onClick={() => setLoginPopup(false)} src={assets.cross_icon} alt="close" /> */}
-        </div>
+        </div> 
           
-   <div style={{textAlign: "center"}} className="g-btn">
+   {/* <div style={{textAlign: "center"}} className="g-btn">
     <button className="google-btn" onClick={googleSign}>  SignUp with Google</button>
    </div>
-   <p style={{textAlign: "center"}}>OR</p>
+   <p style={{textAlign: "center"}}>OR</p> */}
    <hr />
         <div className="login-popup-inputs">
             { currState === 'LogIn'

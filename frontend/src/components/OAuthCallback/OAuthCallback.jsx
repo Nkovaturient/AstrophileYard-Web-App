@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {storeContext} from '../../Context/storeContext.jsx'
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const OAuthCallback = () => {
     const navigate = useNavigate();
@@ -11,6 +12,7 @@ const OAuthCallback = () => {
         const handleOAuthCallback = async () => {
             const query = new URLSearchParams(window.location.search);
             const code = query.get('code');
+            const allowedOrigins=[ 'https://astroyard-backend.onrender.com', 'http://localhost:5173', 'https://astrophileyard.onrender.com']
 
             //https://astrophileyard.onrender.com/auth/google/callback?response_type=code&scope=email%20profile&client_id=1041589073301-hoo78pm8o1lr5u3n8osg332q5q5mq6jt.apps.googleusercontent.com
             if (code) {
@@ -23,7 +25,7 @@ const OAuthCallback = () => {
                     });
 
                     if (!response.ok) {
-                        throw new Error('Network response was not ok');
+                        toast.error('Network response was not ok');
                     }
 
                     const data = await response.json();

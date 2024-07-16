@@ -21,6 +21,7 @@ const LocalStrategy=require("passport-local");
 const GoogleStrategy = require('passport-google-oauth20');
 const cors=require('cors');
 const MongoStore = require('connect-mongo');
+const musicRouter=require('./routes/music.js')
 const PORT=process.env.PORT || 5100
 
 
@@ -149,6 +150,9 @@ app.use((req,res,next)=>{
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use("/archive", archiveRouter);
 app.use("/", userRouter);
+app.use('/musicaly', musicRouter);
+
+
 
 app.get('/authcode', async(req, res)=>{
   const client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -198,23 +202,6 @@ app.get('/callback', function(req, res) {
 app.get("/home", async(req, res)=>{
     res.send("Astrophile Yard Activated!");
 });
-
-
-app.post('/spotify', async(req, res)=>{
-
-    let response=await fetch("https://accounts.spotify.com/api/token", {
-      header: {
-        'Content-Type':'application/x-www-form-urlencoded'
-      },
-      body:{
-        'grant_type':'client_credentials',
-        'client_id': process.env.CLIENT_ID,
-        'client_secret': process.env.CLIENT_SECRET,
-      }})
-
-      console.log(response);
-    res.send('sent1');
-  })
 
 
 // app.get("/testuser", async(req,res)=>{
