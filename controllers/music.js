@@ -26,7 +26,7 @@ module.exports.refreshToken=async(req, res)=>{
     url: 'https://accounts.spotify.com/api/token',
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Basic ' + (new Buffer.from(client_id + ':' + client_secret).toString('base64'))
+      'Authorization': 'Basic ' + (new Buffer.from(process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET).toString('base64'))
     },
     form: {
       grant_type: 'refresh_token',
@@ -47,6 +47,20 @@ module.exports.refreshToken=async(req, res)=>{
 })
     }
     catch(err){
+        console.log(err.message);
+        return res.json({success: false, msg: err.message})
+    }
+}
+
+module.exports.getPlaylist=async(req,res)=>{
+    try{
+        const fetchData=await axios.get('https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n', {
+            headers: {
+                'Authorization': Bearer 
+            }
+        })
+
+    } catch(err){
         console.log(err.message);
         return res.json({success: false, msg: err.message})
     }
