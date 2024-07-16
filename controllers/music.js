@@ -1,6 +1,6 @@
 
 
-export const musicaly=async(Req,res)=>{
+module.exports.musicaly=async(Req,res)=>{
     try{
         let response=await fetch("https://accounts.spotify.com/api/token", {
             header: {
@@ -19,7 +19,7 @@ export const musicaly=async(Req,res)=>{
     }
 }
 
-export const refreshToken=async(req, res)=>{
+module.exports.refreshToken=async(req, res)=>{
     try{
         var refresh_token = req.query.refresh_token;
   var authOptions = {
