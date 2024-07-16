@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Musicaly.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMusic } from '@fortawesome/free-solid-svg-icons'
@@ -10,12 +10,30 @@ import { toast } from 'react-toastify'
 const Musicaly = () => {
 
   const{url, loading, setLoading}=useContext(storeContext);
+  const[access, setAccess]=useState('');
+
+
+  const getToken=async()=>{
+    try{
+      setLoading(true);
+      const response=await axios.post(`${url}/musicaly/getToken`);
+      setLoading(false);
+      console.log(response.data);
+
+    }catch(err){
+      toast.error(`${err.message}`);
+  }
+  }
 
     const fetchData=async()=>{
-      const apiToken='BQCvM0EImNCU0jS7uJ6O1BHIVsE-wOQRS9PdTjZ1_WvDfA-LL-QqfHn8YxrMciDKJZ7fU_jrIE76aC6DXj4v4bmV4Fu3a9OVYt9-0dp7G0Pacjkj1ag'
+
+      // const result= await getToken();
+      // localStorage.setItem('access_token', result.access_token )
+      // setAccess(result.access_token)
+      
       try{
       setLoading(true);
-      const response=await axios.get(`${url}/musicaly/refresh?refresh_token=${apiToken}`);
+      const response=await axios.get(`${url}/musicaly/refresh?refresh_token=${access}`);
       setLoading(false)
       if(response.data.success){
           console.log(response.data);
@@ -33,6 +51,7 @@ const Musicaly = () => {
     
     <div>Musicaly...updates soon! stay tuned <FontAwesomeIcon icon={faMusic}/></div>
     <div>llm input</div>
+    <button onClick={getToken}>Refresh Token</button>
     <button onClick={fetchData}>Fetch</button>
     </>
   )

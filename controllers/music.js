@@ -1,6 +1,6 @@
+const axios=require('axios');
 
-
-module.exports.musicaly=async(Req,res)=>{
+module.exports.musicaly=async(req,res)=>{
     try{
         let response=await fetch("https://accounts.spotify.com/api/token", {
             header: {
@@ -13,7 +13,7 @@ module.exports.musicaly=async(Req,res)=>{
             }})
       
           console.log(response);
-          res.send('sent1');
+          res.json({success: true, token: response.access_token});
     } catch(err){
         console.log(err.message);
     }
@@ -35,7 +35,7 @@ module.exports.refreshToken=async(req, res)=>{
     json: true
   };
 
-  request.post(authOptions, function(error, response, body) {
+  axios.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token,
           refresh_token = body.refresh_token;

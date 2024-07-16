@@ -6,4 +6,6 @@ router.post('/getToken', musiController.musicaly )
 
 router.get('/refresh', musiController.refreshToken)
 
+router.get('/playlist', musiController.getPlaylist)
+
 module.exports=router;
