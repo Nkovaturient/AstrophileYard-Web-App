@@ -6,4 +6,4 @@ router.post('/getToken', musiController.musicaly )
 
 router.get('/refresh', musiController.refreshToken)
 
-export default router;
+module.exports=router;
