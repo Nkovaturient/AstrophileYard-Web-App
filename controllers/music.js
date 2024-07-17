@@ -24,6 +24,7 @@ module.exports.musicaly=async(req,res)=>{
 
 //refresh token
 module.exports.refreshToken=async(req, res)=>{
+  let refreshToken='';
   try {
     const refreshResponse = await axios({
         method: 'post',
