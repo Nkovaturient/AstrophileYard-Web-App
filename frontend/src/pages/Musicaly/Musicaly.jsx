@@ -51,8 +51,8 @@ const Musicaly = () => {
     
     <div>Musicaly...updates soon! stay tuned <FontAwesomeIcon icon={faMusic}/></div>
     <div>llm input</div>
-    <button onClick={getToken}>Refresh Token</button>
-    <button onClick={fetchData}>Fetch</button>
+    {/*<button onClick={getToken}>Refresh Token</button>
+    <button onClick={fetchData}>Fetch</button> */}
     </>
   )
 }
