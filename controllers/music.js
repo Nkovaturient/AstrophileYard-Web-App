@@ -15,10 +15,11 @@ module.exports.musicaly=async(req,res)=>{
               'client_secret': process.env.CLIENT_SECRET,
             }})
       
-          console.log(response);
-          res.json({success: true, token: response.access_token});
+          console.log(`response= ${response}`);
+         return res.json({success: true, token: response.access_token});
     } catch(err){
         console.log(err.message);
+        return res.json({message: `Error generating token: ${err.message}`});
     }
 }
 
