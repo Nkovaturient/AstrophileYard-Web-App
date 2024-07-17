@@ -1,11 +1,15 @@
 const axios=require('axios');
+const qs=require('qs');
 
 //get access token
 module.exports.musicaly=async(req,res)=>{
     try{
-        let response=await fetch("https://accounts.spotify.com/api/token", {
+        let response=await axios("https://accounts.spotify.com/api/token", {
+          method: 'post',
+          headers: {
+            'Content-Type':'application/x-www-form-urlencoded',
+          },
             body:{
-              'Content-Type':'application/x-www-form-urlencoded',
               'grant_type':'client_credentials',
               'client_id': process.env.CLIENT_ID,
               'client_secret': process.env.CLIENT_SECRET,

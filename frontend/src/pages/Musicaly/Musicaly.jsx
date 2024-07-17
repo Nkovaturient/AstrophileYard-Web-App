@@ -28,14 +28,10 @@ const Musicaly = () => {
   }
 
     const fetchData=async()=>{
-
-      // const result= await getToken();
-      // localStorage.setItem('access_token', result.access_token )
-      // setAccess(result.access_token)
       
       try{
       setLoading(true);
-      const response=await axios.get(`${url}/musicaly/playlist`, {headers: accessToken});
+      const response=await axios.get(`${url}/musicaly/playlist`, {headers: access});
       setLoading(false)
       if(response.data.success){
           console.log(response.data);
