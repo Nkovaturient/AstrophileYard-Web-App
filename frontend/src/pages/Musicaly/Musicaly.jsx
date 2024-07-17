@@ -16,9 +16,11 @@ const Musicaly = () => {
   const getToken=async()=>{
     try{
       setLoading(true);
-      const response=await axios.post(`${url}/musicaly/getToken`);
+      const response=await axios.get(`${url}/musicaly/refresh`);
       setLoading(false);
       console.log(response.data);
+      localStorage.setItem('access_token', result.access_token )
+      setAccess(result.access_token)
 
     }catch(err){
       toast.error(`${err.message}`);
@@ -33,7 +35,7 @@ const Musicaly = () => {
       
       try{
       setLoading(true);
-      const response=await axios.get(`${url}/musicaly/refresh?refresh_token=${access}`);
+      const response=await axios.get(`${url}/musicaly/playlist`, {headers: accessToken});
       setLoading(false)
       if(response.data.success){
           console.log(response.data);
@@ -45,14 +47,25 @@ const Musicaly = () => {
   }
     }
 
+    if(loading){
+      return <p>Loading...please wait</p>
+    }
+
+    // useEffect(()=>{
+    //   if(localStorage.getItem('access_token')){
+    //     fetchData()
+    //   } else {
+    //     getToken()
+    //   }
+    // }, [])
+
     
   return (
     <>
     
     <div>Musicaly...updates soon! stay tuned <FontAwesomeIcon icon={faMusic}/></div>
     <div>llm input</div>
-    {/*<button onClick={getToken}>Refresh Token</button>
-    <button onClick={fetchData}>Fetch</button> */}
+    <button onClick={getToken}>Get Token</button>
     </>
   )
 }
