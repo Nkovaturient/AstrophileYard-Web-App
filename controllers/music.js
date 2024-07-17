@@ -1,5 +1,6 @@
 const axios=require('axios');
 const qs=require('qs');
+require('dotenv').config();
 
 //get access token
 module.exports.musicaly=async(req,res)=>{
@@ -40,12 +41,12 @@ module.exports.refreshToken=async(req, res)=>{
         }
     });
 
-    accessToken = refreshResponse.data.access_token;
+    const accessToken = refreshResponse.data.access_token;
 
     return res.json({message: 'Access token refreshed successfully', token: accessToken});
 } catch (error) {
     console.error('Error refreshing token:', error.message);
-    return res.json({message: 'Error refreshing token.'});
+    return res.json({message: `Error refreshing token: ${error.message} `});
 }
 }
 

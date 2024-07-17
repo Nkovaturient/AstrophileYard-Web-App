@@ -50,12 +50,7 @@ const allowedOrigins=[ 'https://astroyard-backend.onrender.com', 'http://localho
 //   credentials: true,
 // }));
 
-app.use(cors({
-  origin: allowedOrigins,
-  methods: 'GET,POST,PUT,DELETE,OPTIONS',
-  allowedHeaders: 'Content-Type,Authorization',
-  credentials: true,
-}));
+app.use(cors());
 
 
 const store= MongoStore.create({
@@ -153,50 +148,6 @@ app.use("/", userRouter);
 app.use('/musicaly', musicRouter);
 
 
-
-app.get('/authcode', async(req, res)=>{
-  const client_id = process.env.SPOTIFY_CLIENT_ID;
-    const redirect_uri = 'https://astroyard-backend.onrender.com/callback';
-
-  let state = generateRandomString(16);
-  let scope = 'user-read-private user-read-email';
-
-  res.redirect('https://accounts.spotify.com/authorize?' +
-    querystring.stringify({
-      response_type: 'code',
-      client_id: client_id,
-      scope: scope,
-      redirect_uri: redirect_uri,
-      state: state
-    }));
-})
-
-app.get('/callback', function(req, res) {
-
-  var code = req.query.code || null;
-  var state = req.query.state || null;
-
-  if (state === null) {
-    res.redirect('/#' +
-      querystring.stringify({
-        error: 'state_mismatch'
-      }));
-  } else {
-    var authOptions = {
-      url: 'https://accounts.spotify.com/api/token',
-      form: {
-        code: code,
-        redirect_uri: redirect_uri,
-        grant_type: 'authorization_code'
-      },
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Basic ' + (new Buffer.from(process.env.CLIENT_ID + ':' + process.env.CLIENT_SECRET).toString('base64'))
-      },
-      json: true
-    };
-  }
-});
 
 
 app.get("/home", async(req, res)=>{

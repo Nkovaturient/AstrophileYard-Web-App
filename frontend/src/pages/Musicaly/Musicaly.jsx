@@ -16,11 +16,12 @@ const Musicaly = () => {
   const getToken=async()=>{
     try{
       setLoading(true);
-      const response=await axios.get(`${url}/musicaly/refresh`);
+      const response=await axios.get(`${url}/musicaly/getToken`);
       setLoading(false);
       console.log(response.data);
-      localStorage.setItem('access_token', result.access_token )
-      setAccess(result.access_token)
+      const result=response.data;
+      // localStorage.setItem('access_token', result.access_token )
+      // setAccess(result.access_token)
 
     }catch(err){
       toast.error(`${err.message}`);

@@ -30,10 +30,10 @@ const Sidebar = ({ setLoginPopup }) => {
           <span><FontAwesomeIcon icon={faImages} /></span>
           <p>Gallery</p>
         </NavLink>
-        <NavLink to={'/archive/musicaly' } className="sidebar-option">
+        {/* <NavLink to={'/archive/musicaly' } className="sidebar-option">
           <span><FontAwesomeIcon icon={faMusic} /></span>
           <p>Tune in</p>
-        </NavLink>
+        </NavLink> */}
         {
           token
             ? <NavLink to={'/logout'} className="sidebar-option">
