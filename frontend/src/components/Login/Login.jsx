@@ -6,10 +6,13 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import GoogleLogin from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
 
 const Login = ({setLoginPopup}) => {
 
-    const {url, token, setToken}= useContext(storeContext);
+    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID; 
+    const {url, token, setToken, handleLogin}= useContext(storeContext);
     const[currState, setCurrState]=useState('LogIn')
     const[data, setData]=useState({
         username: '',
@@ -72,30 +75,7 @@ const Login = ({setLoginPopup}) => {
            }
         }
     }
-
-    const googleSign=async()=>{
-        const allowedOrigins=[ 'https://astroyard-backend.onrender.com', 'http://localhost:5173', 'https://astrophileyard.onrender.com']
-        try{
-            const resp=await axios.get(`${url}/auth/google`, {
-                headers: {
-                    'Access-Control-Allow-Origin': allowedOrigins,
-                }
-            });
-            console.log(resp.data);
-
-        } catch(err){
-            toast.error(`${err.message}`);
-        }
-
-    }
     
-
-    // useEffect(()=>{
-    //     console.log(data);
-    //     console.log(loginData);
-    //     googleAuth();
-        
-    // }, []);
 
   return (
     <div className='login-popup'>
@@ -106,10 +86,17 @@ const Login = ({setLoginPopup}) => {
             {/* <img onClick={() => setLoginPopup(false)} src={assets.cross_icon} alt="close" /> */}
         </div> 
           
-   {/* <div style={{textAlign: "center"}} className="g-btn">
-    <button className="google-btn" onClick={googleSign}>  SignUp with Google</button>
+   <div style={{textAlign: "center"}} className="g-btn">
+    {/* <button className="google-btn" onClick={()=> navigate('/googleLogin')}>  SignUp with Google</button> */}
+    <GoogleLogin
+      clientId={clientId}
+      buttonText="Login with Google"
+      onSuccess={handleLogin}
+      onFailure={(error) => console.error('Google Login Error:', error)}
+      cookiePolicy={'single_host_origin'} // Optional for improved security
+    />
    </div>
-   <p style={{textAlign: "center"}}>OR</p> */}
+   <p style={{textAlign: "center"}}>OR</p>
    <hr />
         <div className="login-popup-inputs">
             { currState === 'LogIn'

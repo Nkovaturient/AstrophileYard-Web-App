@@ -16,7 +16,7 @@ const Musicaly = () => {
   const getToken=async()=>{
     try{
       setLoading(true);
-      const response=await axios.get(`${url}/musicaly/getToken`);
+      const response=await axios.get(`${url}/musicaly/getPlaylist`);
       setLoading(false);
       console.log(response.data);
       const result=response.data;
@@ -28,33 +28,12 @@ const Musicaly = () => {
   }
   }
 
-    const fetchData=async()=>{
-      
-      try{
-      setLoading(true);
-      const response=await axios.get(`${url}/musicaly/playlist`, {headers: access});
-      setLoading(false)
-      if(response.data.success){
-          console.log(response.data);
-          // setImage(response.data.data);
-      }
 
-  }catch(err){
-      toast.error(`${err.message}`);
-  }
-    }
 
     if(loading){
       return <p>Loading...please wait</p>
     }
 
-    // useEffect(()=>{
-    //   if(localStorage.getItem('access_token')){
-    //     fetchData()
-    //   } else {
-    //     getToken()
-    //   }
-    // }, [])
 
     
   return (

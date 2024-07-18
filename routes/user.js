@@ -14,21 +14,16 @@ router.route("/signup")
 router.route("/login")
 .post(validateLogin, wrapAsync(userControllers.loginUser))
 
-router.route("/login/verify")
-.get(wrapAsync(userControllers.renderVerifyForm))
-
-// router.route("/verify")
-// .post( wrapAsync(userControllers.verifyUser));
 
 router.route("/auth/google")
 .get(  passport.authenticate('google', { scope:
     [ 'email', 'profile' ] }
 ));
 router.route('/auth/google/callback')
-.get( passport.authenticate('google', {failureRedirect: '/login', failureFlash: true}), 
+.get( passport.authenticate('google', {failureRedirect: '/', successRedirect: 'http://localhost:5173/', failureFlash: true}), 
    userControllers.successGoogleLogin);
 
-// router.route('/success', userControllers.successGoogleLogin);
+
 
 router.route("/logout")
 .get((userControllers.logout))

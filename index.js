@@ -102,7 +102,7 @@ async function(accessToken, refreshToken, profile, done) {
     const existingUser= await User.findOne({googleId: profile.id});
     if(existingUser){
        done(null, existingUser);
-       return res.json({ user: existingUser, token: refreshToken})
+       return res.json({success: true, user: existingUser, token: refreshToken})
     }
 
     // const username = profile.emails[0].value.split('@')[0];

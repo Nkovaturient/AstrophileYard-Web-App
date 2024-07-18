@@ -42,6 +42,31 @@ const storeContextProvider = (props) => {
     }
   }
 
+  const handleLogin = (response) => {
+    const { tokenId } = response; // Access the access token from the response
+
+    // Send the access token to your backend for authentication
+    fetch(`${url}/auth/google`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tokenId })
+    })
+    .then(async (res) => {
+      const data = await res.json();
+      if (data.success) {
+        localStorage.setItem('user', JSON.stringify(data.user));
+        setToken('user', data.user)
+        // navigate('/'); // Example redirect to homepage
+      } else {
+        console.error('Authentication error:', data.error);
+        toast.error(data.error);
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching user data:', error);
+      toast.error(error.message);
+    });
+  };
 
   const logout=async()=>{
     try{
@@ -50,6 +75,7 @@ const storeContextProvider = (props) => {
      
       // console.log(response);
       localStorage.removeItem('token', token);
+      localStorage.removeItem('user');
       setToken('');
       // toast.success(`Logout success!`);
       // navigate('/');
@@ -79,9 +105,9 @@ const storeContextProvider = (props) => {
         await galleryData();
         if(localStorage.getItem('token')){
             setToken(localStorage.getItem("token"))
-            
-            // await handleOnSubmit(localStorage.getItem("token"))
         } 
+          setToken(localStorage.getItem("user"))
+
     }
 
     loadData();
@@ -99,6 +125,7 @@ const storeContextProvider = (props) => {
     image,
     loading,
     setLoading,
+    handleLogin,
 
   }
   

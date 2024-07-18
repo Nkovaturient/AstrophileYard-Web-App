@@ -2,27 +2,53 @@ const axios=require('axios');
 const qs=require('qs');
 require('dotenv').config();
 
-//get access token
+
+//rapidAPI spotify track
 module.exports.musicaly=async(req,res)=>{
-    try{
-        let response=await axios("https://accounts.spotify.com/api/token", {
-          method: 'post',
-          headers: {
-            'Content-Type':'application/x-www-form-urlencoded',
-          },
-            body:{
-              'grant_type':'client_credentials',
-              'client_id': process.env.CLIENT_ID,
-              'client_secret': process.env.CLIENT_SECRET,
-            }})
-      
-          console.log(`response= ${response}`);
-         return res.json({success: true, token: response.access_token});
-    } catch(err){
-        console.log(err.message);
-        return res.json({message: `Error generating token: ${err.message}`});
+ 
+    const options = {
+      method: 'GET',
+      url: 'https://spotify23.p.rapidapi.com/playlist/',
+      params: {
+        id: '37i9dQZF1DX4Wsb4d7NKfP'
+      },
+      headers: {
+        'x-rapidapi-key': 'b6c6590f4fmsh1128c8c5f71d786p1e364cjsna8389274bc4a',
+        'x-rapidapi-host': 'spotify23.p.rapidapi.com'
+      }
+    };
+    
+    try {
+      const response = await axios.request(options);
+      console.log(response.data);
+      return res.json({success: true, data: response.data});
+    } catch (err) {
+      console.log(err);
+    return res.json({message: `Error in rapidApi: ${err.message}`});
     }
+ 
 }
+//get access token
+// module.exports.musicaly=async(req,res)=>{
+//     try{
+//         let response=await axios("https://accounts.spotify.com/api/token", {
+//           method: 'post',
+//           headers: {
+//             'Content-Type':'application/x-www-form-urlencoded',
+//           },
+//             body:{
+//               'grant_type':'client_credentials',
+//               'client_id': process.env.CLIENT_ID,
+//               'client_secret': process.env.CLIENT_SECRET,
+//             }})
+      
+//           console.log(`response= ${response}`);
+//          return res.json({success: true, token: response.access_token});
+//     } catch(err){
+//         console.log(err.message);
+//         return res.json({message: `Error generating token: ${err.message}`});
+//     }
+// }
 
 //refresh token
 module.exports.refreshToken=async(req, res)=>{

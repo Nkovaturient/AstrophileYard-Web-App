@@ -6,7 +6,7 @@ const { validateArchive, isAuthenticated, authMiddleware } = require("../middlew
 const multer= require('multer');
 
 const storage=multer.diskStorage({
-    destination: 'uploads',
+    destination: 'uploads/',
     filename: (req, file, cb)=>{
         return cb(null, `${file.originalname}`)
         // return cb(null, `${file.originalname}` )
