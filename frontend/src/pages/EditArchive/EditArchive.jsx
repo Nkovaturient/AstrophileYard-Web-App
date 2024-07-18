@@ -84,9 +84,9 @@ const EditArchive = () => {
                 navigate(`/archive/${id}`);
 
             } else {
-                toast.error(`${err.message}`, {
+                toast.error(`${response.data.message}`, {
                     autoClose: 5000,
-                    theme: "dark",
+                    theme: "colored",
                 });
 
             }
