@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
-import { GoogleLogout } from 'react-google-login';
 
 const Login = ({setLoginPopup}) => {
 
