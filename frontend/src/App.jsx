@@ -15,7 +15,6 @@ import Login from './components/Login/Login.jsx';
 import Gallery from './pages/Gallery/Gallery.jsx';
 import Logout from './components/Logout/Logout.jsx';
 import Musicaly from './pages/Musicaly/Musicaly.jsx';
-import GoogleLoginComponent from './components/GoogleLogin/GoogleLogin.jsx';
 
 const App = () => {
 
