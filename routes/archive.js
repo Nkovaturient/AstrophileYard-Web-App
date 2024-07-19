@@ -8,16 +8,7 @@ const path=require('path')
 const fs=require('fs')
 
 const storage=multer.diskStorage({
-    destination: function (req, file, cb) {
-        const dir = path.join(__dirname, 'uploads');
-        if(fs.existsSync(dir)) {
-            cb(null, dir);
-        } else {
-                fs.mkdir(dir, (err) => {
-                    cb(err, dir);
-                });
-            }
-        },
+    destination: 'uploads',
     filename: (req, file, cb)=>{
         return cb(null, `${file.originalname}`)
     }
