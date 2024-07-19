@@ -3,7 +3,7 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     const options = {
       width: '100%',
       height: '160',
-      uri: 'spotify:episode:7makk4oTQel546B0PZlDM5'
+      uri: 'spotify:playlist:37i9dQZF1DWXLeA8Omikj7'
     };
     const callback = (EmbedController) => {
       document.querySelectorAll('.episode').forEach(

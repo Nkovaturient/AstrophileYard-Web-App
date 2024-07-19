@@ -75,7 +75,7 @@ const storeContextProvider = (props) => {
      
       // console.log(response);
       localStorage.removeItem('token', token);
-      localStorage.removeItem('user');
+      // localStorage.removeItem('user');
       setToken('');
       // toast.success(`Logout success!`);
       // navigate('/');
@@ -106,7 +106,7 @@ const storeContextProvider = (props) => {
         if(localStorage.getItem('token')){
             setToken(localStorage.getItem("token"))
         } 
-          setToken(localStorage.getItem("user"))
+          // setToken(localStorage.getItem("user"))
 
     }
 
