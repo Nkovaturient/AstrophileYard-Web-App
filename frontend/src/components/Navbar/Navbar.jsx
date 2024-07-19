@@ -22,7 +22,7 @@ const Navbar = () => {
     </ul>
 
     <div className="navbar-right">
-    {/* <button onClick={()=> navigate('/archive/musicaly')} ><FontAwesomeIcon icon={faMusic}/>Music</button> */}
+    <button onClick={()=> navigate('/archive/musicaly')} ><FontAwesomeIcon icon={faMusic}/>Music</button>
         <div className="navbar-profile">
         <span><FontAwesomeIcon icon={faUserAstronaut}/></span>
           <ul className="nav-profile-dropdown">

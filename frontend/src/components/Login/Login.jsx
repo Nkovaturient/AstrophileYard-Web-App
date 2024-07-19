@@ -85,17 +85,17 @@ const Login = ({setLoginPopup}) => {
             {/* <img onClick={() => setLoginPopup(false)} src={assets.cross_icon} alt="close" /> */}
         </div> 
           
-   <div style={{textAlign: "center"}} className="g-btn">
-    {/* <button className="google-btn" onClick={()=> navigate('/googleLogin')}>  SignUp with Google</button> */}
+   {/* <div style={{textAlign: "center"}} className="g-btn">
+    {/* <button className="google-btn" onClick={()=> navigate('/googleLogin')}>  SignUp with Google</button> 
     <GoogleLogin
       clientId={clientId}
       buttonText="Login with Google"
       onSuccess={handleLogin}
       onFailure={(error) => console.error('Google Login Error:', error)}
-      cookiePolicy={'single_host_origin'} // Optional for improved security
+      cookiePolicy={'single_host_origin'}
     />
    </div>
-   <p style={{textAlign: "center"}}>OR</p>
+   <p style={{textAlign: "center"}}>OR</p> */}
    <hr />
         <div className="login-popup-inputs">
             { currState === 'LogIn'
