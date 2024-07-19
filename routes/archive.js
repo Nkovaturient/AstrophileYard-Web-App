@@ -4,12 +4,22 @@ const archiveControllers=require('../controllers/archive.js')
 const wrapAsync=require("../utils/wrapAsync.js")
 const { validateArchive, isAuthenticated, authMiddleware } = require("../middleware.js");
 const multer= require('multer');
+const path=require('path')
+const fs=require('fs')
 
 const storage=multer.diskStorage({
-    destination: 'uploads/',
+    destination: function (req, file, cb) {
+        const dir = path.join(__dirname, 'uploads');
+        if(fs.existsSync(dir)) {
+            cb(null, dir);
+        } else {
+                fs.mkdir(dir, (err) => {
+                    cb(err, dir);
+                });
+            }
+        },
     filename: (req, file, cb)=>{
         return cb(null, `${file.originalname}`)
-        // return cb(null, `${file.originalname}` )
     }
 })
 

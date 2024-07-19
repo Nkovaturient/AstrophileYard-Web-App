@@ -42,7 +42,7 @@ module.exports.renderEditForm=async(req,res)=>{
 module.exports.postNewArchive = async (req, res) => {
 
     console.log(req.file);
-    console.log(req.body.formData);
+    // console.log(req.body.formData);
 
     const saveArchive = new Archive({
         title: req.body.title,
@@ -86,6 +86,7 @@ module.exports.updateArchive = async (req, res) => {
           archive.image= archive.image;
 
           await archive.save();
+          console.log(archive);
           
 
     return res.status(200).json({success: true, message: 'Updated successfully', archive: archive});
