@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './Musicaly.css'
-import './Musicaly.js'
+// import './Musicaly.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeadphonesAlt, faMusic } from '@fortawesome/free-solid-svg-icons'
 import {storeContext} from '../../Context/storeContext.jsx'
@@ -34,6 +34,9 @@ const Musicaly = () => {
   // }, [playlistId]);
 
   return (
+    <>
+    <body>
+      
     <div className="musical-container">
       <h3>Tune in.. <FontAwesomeIcon icon={faHeadphonesAlt}/> <FontAwesomeIcon icon={faMusic}/></h3>
       {playlistData ? (
@@ -91,6 +94,8 @@ const Musicaly = () => {
         </>
       )}
     </div>
+    </body>
+    </>
   );
 };
 
