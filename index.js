@@ -17,7 +17,7 @@ const flash=require("connect-flash");
 const User = require('./models/user.js');
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
-const GoogleStrategy = require('passport-google-oauth20');
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
 const cors=require('cors');
 const MongoStore = require('connect-mongo');
 const musicRouter=require('./routes/music.js')
@@ -89,7 +89,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  authorizationURL: "https://astrophileyard.onrender.com/auth/google/callback",
+  authorizationURL: "http://localhost:5173/auth/google/callback",
 },
 async function(accessToken, refreshToken, profile, done) {
   try{
