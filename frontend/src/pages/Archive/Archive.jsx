@@ -47,7 +47,7 @@ const Archive = () => {
             <Link to={`/archive/${res._id}/edit`}  className='btn'>Edit</Link> 
           </div>
           <div className="delete">
-          {/* <Link  className='btn'>Delete</Link> to={`/archive/${res._id}/delete`} */}
+          {/* <Link to={`/archive/${res._id}/delete`} className='btn'>Delete</Link>  */}
           </div>
         </div>
 

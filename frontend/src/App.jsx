@@ -15,6 +15,8 @@ import Login from './components/Login/Login.jsx';
 import Gallery from './pages/Gallery/Gallery.jsx';
 import Logout from './components/Logout/Logout.jsx';
 import Musicaly from './pages/Musicaly/Musicaly.jsx';
+import MyAstroyard from './pages/My Astroyard/MyAstroyard.jsx';
+import GoogleLoginComponent from './components/GoogleLogin/GoogleLogin.jsx';
 
 const App = () => {
 
@@ -37,7 +39,8 @@ const App = () => {
         <Route path='/archive/:id/delete' element={<DeleteArchive />} />
         <Route path='/archive/gallery' element={<Gallery />} /> 
         <Route path='/archive/musicaly' element={<Musicaly />} />
-        {/* <Route path='/googleLogin' element={<GoogleLoginComponent />} /> */}
+        <Route path='/archive/dashboard' element={<MyAstroyard />} />
+        <Route path='/googleLogin' element={<GoogleLoginComponent />} />
         <Route path='/logout' element={<Logout />} /> 
       </Routes>
     </div>

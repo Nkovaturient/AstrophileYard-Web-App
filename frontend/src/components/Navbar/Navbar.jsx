@@ -22,13 +22,14 @@ const Navbar = () => {
     </ul>
 
     <div className="navbar-right">
-    <button onClick={()=> navigate('/archive/musicaly')} ><FontAwesomeIcon icon={faMusic}/>Music</button>
+    <button onClick={()=> navigate('/archive/musicaly')} ><FontAwesomeIcon icon={faMusic}/><p>Music</p></button>
         <div className="navbar-profile">
         <span><FontAwesomeIcon icon={faUserAstronaut}/></span>
           <ul className="nav-profile-dropdown">
-            <li><FontAwesomeIcon icon={faDiamond}/><p>My AstroYard</p></li>
+         
+             <li><FontAwesomeIcon icon={faDiamond}/><p>My AstroYard</p></li>   {/*onClick={()=> navigate('/archive/dashboard')} */}
             <hr />
-            {/* <li ><FontAwesomeIcon icon={faUserAstronaut}/><p>Logout</p></li> */}
+            <li><small>Dashboard</small></li>
           </ul>
         </div>
       

@@ -35,7 +35,6 @@ const Musicaly = () => {
 
   return (
     <>
-    <body>
       
     <div className="musical-container">
       <h3>Tune in.. <FontAwesomeIcon icon={faHeadphonesAlt}/> <FontAwesomeIcon icon={faMusic}/></h3>
@@ -68,7 +67,7 @@ const Musicaly = () => {
       ) : (
         <>
         <div className="load">
-        <p>Loading playlist...</p>
+        <p style={{color: '#fff'}}>Reload to view episodes!</p>
         <iframe style={{"borderRadius":"12px", "height":"352" }}
          src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7EF8wVxBVhG?utm_source=generator"
          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -94,7 +93,7 @@ const Musicaly = () => {
         </>
       )}
     </div>
-    </body>
+   
     </>
   );
 };
