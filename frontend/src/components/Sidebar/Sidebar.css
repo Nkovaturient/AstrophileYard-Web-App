@@ -28,7 +28,7 @@
 .sidebar-handle .logo{
     width: 190px;
     height: 90px;
-    aspect-ratio: 3/2;
+    /* aspect-ratio: 3/2; */
     object-fit: contain;
     /* mix-blend-mode: lighten; */
     background-blend-mode: color-burn;
@@ -58,9 +58,22 @@
     border-color: #8cfed4;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 840px) {
     .sidebar-option p{
         display: none;
+    }
+    .sidebar-handle .logo{
+        width: 140px;
+    }
+    
+}
+
+@media (max-width: 650px) {
+    .sidebar-option p{
+        display: none;
+    }
+    .sidebar-handle .logo{
+        width: 60px;
     }
     
 }

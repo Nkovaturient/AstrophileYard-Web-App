@@ -60,7 +60,7 @@
     display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:620px) {
     .gallery-slider{
         width: 210px;
         height: 210px;
@@ -71,9 +71,9 @@
     
 }
 
-@media (max-width:900px) {
+@media (max-width:940px) {
     .gallery-slider{
-        width: 350px;
+        width: 310px;
         height: 290px;
     }
     .arrow{
