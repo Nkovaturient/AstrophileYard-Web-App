@@ -88,10 +88,12 @@ const EditArchive = () => {
                     autoClose: 5000,
                     theme: "colored",
                 });
+                navigate(`/archive/${id}`);
 
             }
         } catch (err) {
-            toast.error(`${err.message}`, {
+            if(err.message === 'Request failed with status code 400')
+            toast.error(`something went wrong`, {
                 autoClose: 5000,
                 theme: "dark",
             });
@@ -142,7 +144,7 @@ const EditArchive = () => {
                         name="facts" rows='6' placeholder='mention an astonishing fact about your archive..' required></textarea>
                 </div>
 
-                <button className='add-btn' type='submit'>Edit <FontAwesomeIcon icon={faEdit} /></button>
+                <button className='add-btn' type='submit' disabled={loading? true : false}>Edit <FontAwesomeIcon icon={faEdit} /></button>
             </form>
 
         </div>

@@ -8,8 +8,9 @@ import { storeContext } from '../../Context/storeContext';
 
 const Archive = () => {
 
-  const{url, token}=useContext(storeContext);
+  const{url, token, loading, setLoading}=useContext(storeContext);
     const[res, setRes]=useState([]);
+    
     
     let {id}= useParams();
     const navigate=useNavigate()
@@ -17,10 +18,12 @@ const Archive = () => {
     const showData = async () => {
       
         try {
+          setLoading(true);
           const response = await axios.get(`${url}/archive/${id}`);
           if (response.data.success) {
             console.log(response.data.archive)
             setRes(response.data.archive)
+            setLoading(false);
             toast.info(`Showcasing ${response.data.archive.title}`, {
               autoClose: 5000,
               theme: "colored",
@@ -35,8 +38,12 @@ const Archive = () => {
         }
       }
 
+      // setImgUrl(res.image);
+      // console.log(res.image);
+
       useEffect(()=>{
        showData()
+       
       }, [])
 
   return (
@@ -47,14 +54,16 @@ const Archive = () => {
             <Link to={`/archive/${res._id}/edit`}  className='btn'>Edit</Link> 
           </div>
           <div className="delete">
-          <Link to={`/archive/${res._id}/delete`} className='btn'>Delete</Link> 
+          {/* <Link to={`/archive/${res._id}/delete`} className='btn'>Delete</Link>  */}
           </div>
         </div>
 
       <h2>{res.title}</h2>
           <div className="col-content">
             <div className="archive-card">
-            <img src={ `${res.image}`} loading="lazy" className="archive-card-image" alt={`${res.image}`} /> 
+            {
+              res.image && res.image.url && <img src={ `${res.image.url}`} loading="lazy" className="archive-card-image" alt={`${res.image.filename}`} />
+            } 
               <div className="archive-card-body">
                 <p className="archive-card-text caption">{res.caption}</p>
                 <p className="archive-card-text description">{res.description}</p>

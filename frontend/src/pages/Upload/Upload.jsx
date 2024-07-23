@@ -10,7 +10,7 @@ import { storeContext } from '../../Context/storeContext'
 
 const Upload = () => {
 
-  const { url, token } = useContext(storeContext);
+  const { url, token,loading,setLoading } = useContext(storeContext);
 
   const [image, setImage] = useState(false)
   const [data, setData] = useState({
@@ -40,7 +40,7 @@ const Upload = () => {
       formInfo.append("facts", data.facts);
       formInfo.append("image", image);
 
-
+      setLoading(true);
       const response = await axios.post(`${url}/archive`, formInfo,
         {
           headers: {
@@ -49,6 +49,7 @@ const Upload = () => {
           }
         })
       if (response.data.success) {
+        setLoading(false);
         console.log(response.data.archive);
         toast.success('Uploaded your Archive successfully!', {
           autoClose: 5000,
@@ -67,8 +68,8 @@ const Upload = () => {
   }
 
 
-  console.log(data);
-  console.log(image);
+  // console.log(data);
+  // console.log(image);
 
 
 
@@ -111,30 +112,7 @@ const Upload = () => {
             name="facts" rows='6' placeholder='mention an astonishing fact about your archive..' required></textarea>
         </div>
 
-        {/* <div className="add-category-price">
-            <div className="add-category flex-col">
-                <p>Product Category</p>
-                <select onChange={handleOnChange}
-                    name="category" required>
-                    <option value="Salad">Salad</option>
-                    <option value="Rolls">Rolls</option>
-                    <option value="Sandwich">Sandwich</option>
-                    <option value="Deserts">Deserts</option>
-                    <option value="Cake">Cake</option>
-                    <option value="Pure Veg">Pure Veg</option>
-                    <option value="Pasta">Pasta</option>
-                    <option value="Noodles">Noodles</option>
-                </select>
-            </div>
-            <div className="add-price flex-col">
-                <p>Product Price</p>
-                <input onChange={handleOnChange} value={data.price}
-                    type="Number" name='price' placeholder='💲20' />
-
-            </div>
-        </div> */}
-
-        <button className='add-btn' type='submit'>Upload <FontAwesomeIcon icon={faSpaceShuttle} /></button>
+        <button className='add-btn' type='submit' disabled={ loading? true : false}>Upload <FontAwesomeIcon icon={faSpaceShuttle} /></button>
       </form>
 
     </div>
