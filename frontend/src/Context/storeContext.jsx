@@ -7,8 +7,8 @@ export const storeContext= createContext(null);
 
 const storeContextProvider = (props) => {
 
-  // const url=`https://astroyard-backend.onrender.com`;
-  const url= `http://localhost:5100`;
+  const url=`https://astroyard-backend.onrender.com`;
+  // const url= `http://localhost:5100`;
   const[loading, setLoading]=useState(false);
   const [token, setToken]=useState('')
   const navigate=useNavigate();
