@@ -69,9 +69,8 @@ module.exports.updateArchive = async (req, res) => {
 
     try{
         let { id } = req.params;
-        const url=req.file.path;
-        const filename=req.file.filename;
-    const archive = await Archive.findById(id);
+        
+       const archive = await Archive.findById(id);
       
         if (!archive) {
             return res.status(404).json({ message: 'Archive not found' });
@@ -81,18 +80,19 @@ module.exports.updateArchive = async (req, res) => {
           archive.caption=req.body.caption || archive.caption;
           archive.facts=req.body.facts || archive.facts;
           archive.description=req.body.description || archive.description;
-
-          if(req.file){
-            archive.image= {url, filename};
-          }
-          archive.image= archive.image;
+          if(typeof req.file !== "undefined"){
+            let url= req.file.path;
+            let filename= req.file.filename;
+          archive.image= {url, filename};
+        }
+        archive.image=archive.image;
+          
 
           await archive.save();
           console.log('updated', archive);
           
 
     return res.status(200).json({success: true, message: 'Updated successfully', archive: archive});
-    
     } catch(err){
         return res.status(400).json({success: false, message: `${err.message}`});
     }
