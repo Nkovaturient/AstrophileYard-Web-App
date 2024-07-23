@@ -54,7 +54,7 @@ const Archive = () => {
       <h2>{res.title}</h2>
           <div className="col-content">
             <div className="archive-card">
-            <img src={ `${res.image.url}`} loading="lazy" className="archive-card-image" alt={`${res.image.filename}`} /> 
+            <img src={ `${res.image}`} loading="lazy" className="archive-card-image" alt={`${res.image}`} /> 
               <div className="archive-card-body">
                 <p className="archive-card-text caption">{res.caption}</p>
                 <p className="archive-card-text description">{res.description}</p>
