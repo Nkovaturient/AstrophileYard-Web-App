@@ -42,7 +42,7 @@ const EditArchive = () => {
                     title: result.title,
                     caption: result.caption,
                     description: result.description,
-                    image: result.image,
+                    image: result.image.url,
                     facts: result.facts,
                 })
 

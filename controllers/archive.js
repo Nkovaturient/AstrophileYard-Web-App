@@ -40,26 +40,26 @@ module.exports.renderEditForm=async(req,res)=>{
 }
 
 module.exports.postNewArchive = async (req, res) => {
-
-    console.log(req.file);
-    // console.log(req.body.formData);
+    
+    let url=req.file?.path;
+    let filename=req.file?.filename;
+    // console.log(url, '---', filename);
 
     const saveArchive = new Archive({
         title: req.body.title,
         caption:req.body.caption,
-        image: req.file? req.file.path : req.body.image,
         description:req.body.description,
         facts:req.body.facts,
     });
-    // if(req.file){
-    //     saveArchive.image= req.file.path;
-    // } else {
-    //     saveArchive.image=  req.body.image;
-    // }
+    if(req.file){
+        saveArchive.image= {url, filename};
+    } else {
+        saveArchive.image=  req.body.image;
+    }
     
     console.log(saveArchive);
 
-   const savedArchive= await saveArchive.save();
+    const savedArchive= await saveArchive.save();
     return res.status(200).json({success: true, archive: savedArchive});
 
 };
@@ -69,6 +69,8 @@ module.exports.updateArchive = async (req, res) => {
 
     try{
         let { id } = req.params;
+        const url=req.file.path;
+        const filename=req.file.filename;
     const archive = await Archive.findById(id);
       
         if (!archive) {
@@ -81,12 +83,12 @@ module.exports.updateArchive = async (req, res) => {
           archive.description=req.body.description || archive.description;
 
           if(req.file){
-            archive.image= req.file.path;
+            archive.image= {url, filename};
           }
           archive.image= archive.image;
 
           await archive.save();
-          console.log(archive);
+          console.log('updated', archive);
           
 
     return res.status(200).json({success: true, message: 'Updated successfully', archive: archive});

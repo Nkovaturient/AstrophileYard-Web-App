@@ -6,19 +6,26 @@ const { validateArchive, isAuthenticated, authMiddleware } = require("../middlew
 const multer= require('multer');
 const path=require('path')
 const fs=require('fs')
+const {storage}=require('../utils/cloudConfig.js');
 
-const storage=multer.diskStorage({
-    destination: 'uploads',
-    filename: (req, file, cb)=>{
-        return cb(null, `${file.originalname}`)
-    }
-})
+// const storage=multer.diskStorage({
+//     destination: 'uploads/',
+//     filename: (req, file, cb)=>{
+//         return cb(null, `${file.originalname}`)
+//     }
+// })
 
-const upload=multer({ storage: storage});
+const upload=multer({ storage });
 
 router.route("/")
 .get(wrapAsync(archiveControllers.index))
 .post( upload.single('image'), wrapAsync(archiveControllers.postNewArchive)) //validateArchive isauth
+// .post(upload.single('image'), (req,res)=>{  //checking cloudinary img upload response--then archive model reconfig
+//     res.send(req.file);
+//     console.log(req.file);
+// });
+
+
 
 router.route("/new")
 .get( wrapAsync(archiveControllers.createArchive));

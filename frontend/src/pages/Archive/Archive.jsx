@@ -47,14 +47,14 @@ const Archive = () => {
             <Link to={`/archive/${res._id}/edit`}  className='btn'>Edit</Link> 
           </div>
           <div className="delete">
-          {/* <Link to={`/archive/${res._id}/delete`} className='btn'>Delete</Link>  */}
+          <Link to={`/archive/${res._id}/delete`} className='btn'>Delete</Link> 
           </div>
         </div>
 
       <h2>{res.title}</h2>
           <div className="col-content">
             <div className="archive-card">
-              <img src={ `${url}/${res.image}`} loading="lazy" className="archive-card-image" alt="img" />
+              <img src={ `${res.image.url}`} loading="lazy" className="archive-card-image" alt={`${res.image.filename}`} />
               <div className="archive-card-body">
                 <p className="archive-card-text caption">{res.caption}</p>
                 <p className="archive-card-text description">{res.description}</p>

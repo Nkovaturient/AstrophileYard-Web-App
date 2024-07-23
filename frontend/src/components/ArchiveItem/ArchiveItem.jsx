@@ -17,7 +17,7 @@ const ArchiveItem = ({id, title, image, caption, description, facts}) => {
     <Link to={`/archive/${id}`} >
           <div className="col">
             <div className="card card-index" style={{"width": "20rem" }}>
-              <img src={`${url}/${image}`} loading="lazy" className="card-img-top" alt="img" style={{"height": "20rem"}} />
+              <img src={`${image.url}`} loading="lazy" className="card-img-top" alt={`${image.filename}`} style={{"height": "20rem"}} />
               <div className="card-body card-img-overlay">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{caption}</p>
