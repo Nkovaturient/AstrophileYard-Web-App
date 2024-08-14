@@ -1,4 +1,4 @@
-# ⛩️☪️ AstrophileYard: Web App for space lovers to mesmerize themselves with the cosmic carnivals and deep mysteries of universe. 🌟🌊
+# ⛩️☪️ AstrophileYard: Web App for space lovers to mesmerize themselves with the cosmic carnivals and deep mysteries of the universe. 🌟🌊
   <em>For people caught in their mundane life cycle and aspires to be escapist :))</em> 😉☄️
 
 👉 [Visit AstrophileYard](https://astrophileyard.onrender.com)
