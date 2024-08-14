@@ -16,7 +16,6 @@
 - **React-toastify**: Enhancing flash messages for better user communication. 🔦
 - **Passport.js**: Ensuring secure authentication. 🛂
 - **Cookies & Sessions**: Managing user data securely. 🍪
-- **ejs-mate**: Optimizing EJS templates for dynamic content. *️⃣
   
 ## 🎇Features
 
