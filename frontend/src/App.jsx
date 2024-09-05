@@ -17,6 +17,8 @@ import Logout from './components/Logout/Logout.jsx';
 import Musicaly from './pages/Musicaly/Musicaly.jsx';
 import MyAstroyard from './pages/My Astroyard/MyAstroyard.jsx';
 import GoogleLoginComponent from './components/GoogleLogin/GoogleLogin.jsx';
+import ScrollToTop from './pages/ScrollToTop.jsx';
+import PageNotFound from './pages/PageNotFound.jsx';
 
 const App = () => {
 
@@ -30,6 +32,7 @@ const App = () => {
     }
     
     <div className='app-content'>
+      <ScrollToTop />
     <Sidebar setLoginPopup={setLoginPopup} /> 
       <Routes>
         <Route path='/' element={<Home  />} />
@@ -42,6 +45,7 @@ const App = () => {
         <Route path='/archive/dashboard' element={<MyAstroyard />} />
         <Route path='/googleLogin' element={<GoogleLoginComponent />} />
         <Route path='/logout' element={<Logout />} /> 
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </div>
     <Footer/>

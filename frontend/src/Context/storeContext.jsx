@@ -1,7 +1,9 @@
 import axios from 'axios';
+import { signInWithPopup } from 'firebase/auth';
 import React, { createContext, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { auth, provider } from '../firebase';
 
 export const storeContext= createContext(null);
 
@@ -43,6 +45,37 @@ const storeContextProvider = (props) => {
     }
   }
 
+  const handleGoogleSignIn=async()=>{
+
+    setLoading(true);
+    await signInWithPopup(auth, provider)
+  .then((result) => {
+    setLoading(false);
+    const user = result.user;
+  const { email, displayName, photoURL, refreshToken}=user
+  
+//   setUserData(user);
+//   setPhotoUrl(photoURL);
+  setToken(refreshToken || token);
+//  setUserEmail(email);
+
+    // console.log("user=", userData);
+    toast.success("Registered Successfully!", {
+      position: "top-left",
+      theme: "dark",
+    });
+
+  }).catch((error) => {
+
+    setLoading(false);
+    toast.error(`${error.message}`, {
+      position: "top-left",
+      autoClose: 5000,
+      theme: "dark",
+    });
+  });
+  }
+
   const handleLogin = (response) => {
     const { tokenId } = response; // Access the access token from the response
 
@@ -76,7 +109,6 @@ const storeContextProvider = (props) => {
      
       // console.log(response);
       localStorage.removeItem('token', token);
-      // localStorage.removeItem('user');
       setToken('');
       // toast.success(`Logout success!`);
       // navigate('/');
@@ -127,6 +159,7 @@ const storeContextProvider = (props) => {
     loading,
     setLoading,
     handleLogin,
+    handleGoogleSignIn,
 
   }
   

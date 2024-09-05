@@ -29,15 +29,15 @@ const GoogleLoginComponent = () => {
   
     const onError = (error) => {
       toast.error('Login Failed:', {
+        autoClose: 5000,
         theme:'colored',
       });
-      console.log(error);
+      console.log(error.details);
     };
   
 
   return (
     <>
-    <div>GoogleLogin</div>
     <GoogleLogin
       clientId={clientId}
       buttonText="Login with Google"

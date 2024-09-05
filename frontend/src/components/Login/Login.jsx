@@ -11,7 +11,7 @@ import GoogleLogin from '@leecheuk/react-google-login'
 const Login = ({setLoginPopup}) => {
 
     const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID; 
-    const {url, token, setToken, handleLogin}= useContext(storeContext);
+    const {url, token, setToken, handleLogin, handleGoogleSignIn}= useContext(storeContext);
     const[currState, setCurrState]=useState('LogIn')
     const[data, setData]=useState({
         username: '',
@@ -97,7 +97,7 @@ const Login = ({setLoginPopup}) => {
     };
   
     const onError = (error) => {
-      console.error('Login Failed:', error);
+      console.log('Login Failed:', error);
     };
 
     
@@ -111,17 +111,11 @@ const Login = ({setLoginPopup}) => {
             {/* <img onClick={() => setLoginPopup(false)} src={assets.cross_icon} alt="close" /> */}
         </div> 
           
-   {/* <div style={{textAlign: "center"}} className="g-btn">
-     <button className="google-btn" onClick={()=> navigate('/googleLogin')}>  SignUp with Google</button> 
-    <GoogleLogin
-      clientId={clientId}
-      buttonText="Login with Google"
-      onSuccess={onSuccess}
-      onFailure={onError}
-     cookiePolicy={'single_host_origin'}
-    />
+   <div style={{textAlign: "center"}} className="g-btn">
+     <button className="google-btn" onClick={handleGoogleSignIn}> Login with Google</button> 
+    
    </div>
-   <p style={{textAlign: "center"}}>OR</p> */}
+   <p style={{textAlign: "center"}}>OR</p>
    <hr />
         <div className="login-popup-inputs">
             { currState === 'LogIn'
