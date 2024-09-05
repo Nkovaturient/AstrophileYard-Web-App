@@ -3,6 +3,9 @@
 
 👉 [Visit AstrophileYard](https://astrophileyard.onrender.com)
 
+![w4-update](https://github.com/user-attachments/assets/46fef4b8-4ce0-467f-9e8b-8bce6f29dbe0)
+
+
 ## 🎇About
 -   Built a web app that encaptures you with the mysteries of the universe----
 -  Login
@@ -11,6 +14,8 @@
 -  Listen to cosmic music and episodes
 -  Immerse urself in "outer" space beyond ur mundane life activities, expand your horizon, and
 -  keep looking up ☄️🌠✨
+
+![newFeature-astro](https://github.com/user-attachments/assets/193d4159-69c1-462f-be02-254c1092422a)
 
 
 ## 🎇Technologies: <b>MERN Stack</b> 🧑‍💻
