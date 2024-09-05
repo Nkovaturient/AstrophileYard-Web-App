@@ -1,9 +1,17 @@
-# ⛩️☪️ AstrophileYard: Web App for space lovers to mesmerize themselves with the cosmic carnivals and deep mysteries of universe. 🌟🌊
+# ⛩️☪️ AstrophileYard: Web App for space lovers to mesmerize themselves with the cosmic carnivals and deep mysteries of the universe. 🌟🌊
   <em>For people caught in their mundane life cycle and aspires to be escapist :))</em> 😉☄️
 
 👉 [Visit AstrophileYard](https://astrophileyard.onrender.com)
 
 ## 🎇About
+-   Built a web app that encaptures you with the mysteries of the universe----
+-  Login
+-  Uploading ur Archive(if, u are an astrophotographer)
+-  Glance at the artistically templated' archives and Gallerxy (Galactic Gallery)
+-  Listen to cosmic music and episodes
+-  Immerse urself in "outer" space beyond ur mundane life activities, expand your horizon, and
+-  keep looking up ☄️🌠✨
+
 
 ## 🎇Technologies: <b>MERN Stack</b> 🧑‍💻
 
@@ -16,7 +24,6 @@
 - **React-toastify**: Enhancing flash messages for better user communication. 🔦
 - **Passport.js**: Ensuring secure authentication. 🛂
 - **Cookies & Sessions**: Managing user data securely. 🍪
-- **ejs-mate**: Optimizing EJS templates for dynamic content. *️⃣
   
 ## 🎇Features
 
