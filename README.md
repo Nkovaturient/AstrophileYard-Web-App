@@ -3,7 +3,7 @@
 
 👉 [Visit AstrophileYard](https://astrophileyard.onrender.com)
 
-![w4-update](https://github.com/user-attachments/assets/46fef4b8-4ce0-467f-9e8b-8bce6f29dbe0)
+https://github.com/user-attachments/assets/1d3c9aee-30aa-4173-9b86-77e02977d1d5
 
 
 ## 🎇About
@@ -18,17 +18,18 @@
 ![newFeature-astro](https://github.com/user-attachments/assets/193d4159-69c1-462f-be02-254c1092422a)
 
 
-## 🎇Technologies: <b>MERN Stack</b> 🧑‍💻
+# Tech Stack & Tools
 
-- **MongoDB**: For efficient data storage. 🏪
-- **Express.js**: web application framework for handling server-side logic. 🧮
-- **React.js**: javascript lib for frontend optimisation and enhanced reusability + scalability ⚛️
-- **Node.js**: Powering our backend server. ◀️
-- **Bootstrap**: Crafting sleek and responsive UI components. 🌙
-- **JavaScript**: Driving interactivity and functionality. 🏄
-- **React-toastify**: Enhancing flash messages for better user communication. 🔦
-- **Passport.js**: Ensuring secure authentication. 🛂
-- **Cookies & Sessions**: Managing user data securely. 🍪
+- ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) **MongoDB**: For efficient data storage. 🏪
+- ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) **Express.js**: web application framework for handling server-side logic. 🧮
+- ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) **React.js**: JavaScript lib for frontend optimization and enhanced reusability + scalability. ⚛️
+- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) **Node.js**: Powering our backend server. ◀️
+- ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white) **Bootstrap**: Crafting sleek and responsive UI components. 🌙
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) **JavaScript**: Driving interactivity and functionality. 🏄
+- ![React Toastify](https://img.shields.io/badge/React_Toastify-FFDD00?style=for-the-badge&logo=react&logoColor=black) **React-toastify**: Enhancing flash messages for better user communication. 🔦
+- ![Passport.js](https://img.shields.io/badge/Passport.js-34E27A?style=for-the-badge&logo=passport&logoColor=black) **Passport.js**: Ensuring secure authentication. 🛂
+- ![Cookies & Sessions](https://img.shields.io/badge/Cookies_&_Sessions-FB7D24?style=for-the-badge&logo=internetexplorer&logoColor=white) **Cookies & Sessions**: Managing user data securely. 🍪
+
   
 ## 🎇Features
 
@@ -47,10 +48,7 @@ Integrated error-handling middlewares and WrapAsync functions to tackle any pote
 ### 5. Cookies & Session Management
  utilizing cookies and session management to securely store user information for a specified period, enhancing browsing experience.
 
-### 6. Passport.js Authentication
- Passport.js authentication provides an extra layer of protection as one navigate through the website.
-
-### 7. Frontend and Backend Functionality
+### 6. Frontend and Backend Functionality
 From search options to navbar enhancements, this platform boasts seamless functionality on both the frontend and backend. Explore with ease and find the perfect rental for your next adventure!
 
 
