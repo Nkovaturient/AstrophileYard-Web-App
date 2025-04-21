@@ -1,5 +1,5 @@
 # ⛩️☪️ AstrophileYard: Web App for space lovers to mesmerize themselves with the cosmic carnivals and deep mysteries of the universe. 🌟🌊
-  <em>For people caught in their mundane life cycle and aspires to be escapist :))</em> 😉☄️
+  <em>For people caught in their mundane life and aspires to be an escapist :))</em> 😉☄️
 
 👉 [Visit AstrophileYard](https://astrophileyard.onrender.com)
 
@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/1d3c9aee-30aa-4173-9b86-77e02977d1d5
 
 
 ## 🎇About
--   Built a web app that encaptures you with the mysteries of the universe----
+-   Built a web app that encaptures you with the mysteries of the universe--
 -  Login
 -  Uploading ur Archive(if, u are an astrophotographer)
 -  Glance at the artistically templated' archives and Gallerxy (Galactic Gallery)
