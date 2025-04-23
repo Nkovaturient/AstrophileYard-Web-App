@@ -1,5 +1,5 @@
 # ⛩️☪️ AstrophileYard: Web App for space lovers to mesmerize themselves with the cosmic carnivals and deep mysteries of the universe. 🌟🌊
-  <em>For people caught in their mundane life and aspires to be an escapist :))</em> 😉☄️
+  <em>For people caught in their mundane life and aspires to be an escapist :))</em> ☄️
 
 👉 [Visit AstrophileYard](https://astrophileyard.onrender.com)
 
