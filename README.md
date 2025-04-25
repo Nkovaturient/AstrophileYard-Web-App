@@ -13,7 +13,7 @@ https://github.com/user-attachments/assets/1d3c9aee-30aa-4173-9b86-77e02977d1d5
 -  Glance at the artistically templated' archives and Gallerxy (Galactic Gallery)
 -  Listen to cosmic music and episodes
 -  Immerse urself in "outer" space beyond ur mundane life activities, expand your horizon, and
--  keep looking up ☄️🌠✨
+-  keep looking up!#starTalkians #StarTalk ☄️🌠✨ 
 
 ![newFeature-astro](https://github.com/user-attachments/assets/193d4159-69c1-462f-be02-254c1092422a)
 
