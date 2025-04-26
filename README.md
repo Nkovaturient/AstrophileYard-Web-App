@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/1d3c9aee-30aa-4173-9b86-77e02977d1d5
 ## 🎇About
 -   Built a web app that encaptures you with the mysteries of the universe--
 -  Login
--  Uploading ur Archive(if, u are an astrophotographer)
+-  Upload ur Archive(if, u are an astrophotographer)
 -  Glance at the artistically templated' archives and Gallerxy (Galactic Gallery)
 -  Listen to cosmic music and episodes
 -  Immerse urself in "outer" space beyond ur mundane life activities, expand your horizon, and
@@ -56,5 +56,5 @@ From search options to navbar enhancements, this platform boasts seamless functi
 
 -  Sign up and start exploring! Ping me up if there's any room for improvement! 📩
 
-Open to your Feedback and humble suggestions. 😄🔯 
+Open to your Feedback and humble suggestions.😄🔯 
 Happy Coding! ✈️🌟
