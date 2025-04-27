@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/1d3c9aee-30aa-4173-9b86-77e02977d1d5
 ![newFeature-astro](https://github.com/user-attachments/assets/193d4159-69c1-462f-be02-254c1092422a)
 
 
-# Tech Stack & Tools
+# Tech Stack
 
 - ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) **MongoDB**: For efficient data storage. 🏪
 - ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) **Express.js**: web application framework for handling server-side logic. 🧮
