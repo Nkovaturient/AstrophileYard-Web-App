@@ -7,8 +7,8 @@ https://github.com/user-attachments/assets/1d3c9aee-30aa-4173-9b86-77e02977d1d5
 
 
 ## 🎇About
--   Built a web app that encaptures you with the mysteries of the universe--
--  Login
+-  A web app that encaptures you with the mysteries of the universe--
+-  Login 
 -  Upload ur Archive(if, u are an astrophotographer)
 -  Glance at the artistically templated' archives and Gallerxy (Galactic Gallery)
 -  Listen to cosmic music and episodes
