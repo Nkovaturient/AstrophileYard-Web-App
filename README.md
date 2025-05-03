@@ -57,4 +57,4 @@ From search options to navbar enhancements, this platform boasts seamless functi
 -  Sign up and start exploring! Ping me up if there's any room for improvement! 📩
 
 Open to your Feedback and humble suggestions.😄
-Happy Coding! ✈️🌟
+Happy Coding! 🌟
