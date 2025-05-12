@@ -5,7 +5,6 @@
 
 https://github.com/user-attachments/assets/1d3c9aee-30aa-4173-9b86-77e02977d1d5
 
-
 ## 🎇About
 -  A web app that encaptures you with the mysteries of the universe--
 -  Login 
