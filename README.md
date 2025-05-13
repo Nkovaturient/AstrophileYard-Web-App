@@ -53,9 +53,142 @@ From search options to navbar enhancements, this platform boasts seamless functi
 
 ## 🎇Get Started
 
-— Fork and Clone the repository and start contributing to enhance it further.
+— Here’s a step-by-step guide tailored for new contributors who want to contribute to your repository, **AstrophileYard-Web-App** :
 
--  Sign up and start exploring! Ping me up if there's any room for improvement! 📩
+---
 
-Open to your Feedback and humble suggestions.😄
+### **Step 1: Fork the Repository**
+1. Click the **Fork** button in the top-right corner to create a personal copy of the repository under your GitHub account.
+
+---
+
+### **Step 2: Clone the Forked Repository**
+1. Open a terminal or command prompt.
+2. Clone your forked repository using the following command:
+   ```bash
+   git clone https://github.com/<your-username>/AstrophileYard-Web-App.git
+   ```
+
+3. Navigate to the project folder:
+   ```bash
+   cd AstrophileYard-Web-App
+   ```
+
+---
+
+### **Step 3: Add the Original Repository as an Upstream**
+To keep your fork updated with the original repository:
+1. Add the upstream repository:
+   ```bash
+   git remote add upstream https://github.com/Nkovaturient/AstrophileYard-Web-App.git
+   ```
+2. Verify remotes:
+   ```bash
+   git remote -v
+   ```
+   You should see `origin` (your fork) and `upstream` (the original repository).
+
+---
+
+### **Step 4: Install Dependencies**
+1. Ensure you have the required tools installed:
+   - **Git**: [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+   - **Node.js and npm** (if the repository uses Node.js): [Install Node.js](https://nodejs.org/).
+   - **Other dependencies**: Check the `README.md` or `package.json` for specific tools or dependencies.
+   
+2. Install the project dependencies:
+   ```bash
+   npm install
+   ```
+   This command will install all the necessary packages specified in the `package.json` file.
+
+---
+
+### **Step 5: Create a New Branch**
+1. Before making any changes, create a new branch for your work:
+   ```bash
+   git checkout -b <branch-name>
+   ```
+   Replace `<branch-name>` with a meaningful name, such as `feature/add-login-page`.
+
+---
+
+### **Step 6: Make Changes Locally**
+1. Open the project in your favorite code editor (e.g., VS Code).
+   ```bash
+   code .
+   ```
+2. Make your changes to the codebase. Follow any contribution guidelines specified in the repository (e.g., coding standards, linters, etc.).
+
+3. Test your changes locally to ensure they work as expected:
+   ```bash
+   npm run start
+   ```
+
+---
+
+### **Step 7: Commit Your Changes**
+1. Stage the files you modified:
+   ```bash
+   git add .
+   ```
+   Or specify specific files, e.g.:
+   ```bash
+   git add path/to/file
+   ```
+
+2. Commit your changes with a clear message:
+   ```bash
+   git commit -m "Brief description of the changes"
+   ```
+
+---
+
+### **Step 8: Keep Your Branch Updated**
+Before pushing your changes, ensure your branch is up-to-date with the latest changes from the original repository:
+1. Fetch and merge the latest changes from the upstream repository:
+   ```bash
+   git fetch upstream
+   git merge upstream/main
+   ```
+   Replace `main` with the default branch name if it’s different.
+
+2. Resolve any merge conflicts if necessary.
+
+---
+
+### **Step 9: Push Your Changes**
+1. Push your branch to your forked repository:
+   ```bash
+   git push origin <branch-name>
+   ```
+
+---
+
+### **Step 10: Create a Pull Request**
+1. Go to your forked repository on GitHub.
+2. You should see a prompt to create a pull request (PR) for your recently pushed branch. Click **Compare & pull request**.
+3. Fill out the PR template if available, or provide a detailed explanation of your changes.
+4. Select the correct branch of the original repository (e.g., `main`) as the base branch.
+5. Submit the pull request.
+
+---
+
+### **Step 11: Participate in Code Review**
+1. Wait for maintainers or collaborators to review your PR.🚀⭐
+---
+
+2. Keep your forked repository in sync with the original repository for future contributions:
+   ```bash
+   git fetch upstream
+   git merge upstream/main
+   git push origin main
+   ```
+
+---
+
+
+
+
+— Open to your Feedback and humble suggestions.😄
 Happy Coding! 🌟🚀
