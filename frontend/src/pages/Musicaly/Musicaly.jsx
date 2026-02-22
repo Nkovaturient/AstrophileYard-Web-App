@@ -68,7 +68,7 @@ const Musicaly = () => {
           <>
             <div className="load">
               <div className="load-quote">
-                <em>"Music gives  Soul to the Universe, wings to the mind, flight to the imaginaion and life to Everything. "</em>
+                <em>"Music gives  Soul to the Universe, Wings to the mind, Flight to the imagination and Life to Everything. "</em>
               </div>
 
               <iframe style={{ "borderRadius": "12px", "height": "352" }}
@@ -81,7 +81,7 @@ const Musicaly = () => {
             {/* <div className="load-quote">
             <em>"Music gives a Soul to the Universe, wings to the mind, flight to the imaginaion and life to Everything. "</em>
           </div> */}
-            <p style={{ color: '#fff' }}>Reload the webpage to view episodes! <FontAwesomeIcon icon={faArrowAltCircleDown}/></p>
+            <p style={{ color: '#fff' }}>Reload the webpage to view episodes! <FontAwesomeIcon icon={faArrowAltCircleDown} /></p>
             <div className="embed">
               <div className="episodes">
                 <button className="episode" data-spotify-id="spotify:playlist:37i9dQZF1DXbIeCFU20wRm">
